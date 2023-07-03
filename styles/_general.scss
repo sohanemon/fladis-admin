@@ -1,0 +1,122 @@
+@mixin flex {
+    display: flex;
+    gap: 10px;
+}
+@mixin flex-align-center {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+@mixin ellipsis {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: pre-wrap;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: calc(100vw - 40px);
+}
+.text-center {
+    text-align: center;
+}
+.text-end {
+    text-align: end;
+}
+.flex-column {
+    @include flex;
+    flex-direction: column;
+}
+.align-start {
+    @include flex;
+    align-items: flex-start;
+}
+.align-center {
+    @include flex;
+    align-items: center;
+}
+.align-end {
+    @include flex;
+    align-items: flex-end;
+}
+.justify-start {
+    @include flex-align-center;
+    justify-content: flex-start;
+}
+.justify-center {
+    @include flex-align-center;
+    justify-content: center;
+}
+.justify-end {
+    @include flex-align-center;
+    justify-content: flex-end;
+}
+.justify-space-between {
+    @include flex-align-center;
+    justify-content: space-between;
+}
+.ellipsis1 {
+    @include ellipsis;
+    -webkit-line-clamp: 1;
+}
+.ellipsis2 {
+    @include ellipsis;
+    -webkit-line-clamp: 2;
+}
+.column-2 {
+    display: grid;
+    row-gap: 10px;
+}
+.fw-3 {
+    font-weight: 300;
+}
+.fw-4 {
+    font-weight: 400;
+}
+.fw-5 {
+    font-weight: 500;
+}
+.fw-6 {
+    font-weight: 600;
+}
+.mb-1 {
+    margin-bottom: 10px;
+}
+.mb-2 {
+    margin-bottom: 15px;
+}
+.mb-3 {
+    margin-bottom: 20px;
+}
+hr {
+    border: none;
+    border-top: 0.5px solid rgba(125, 135, 156, 0.28);
+}
+@media screen and (min-width: 680px) {
+    .container {
+        max-width: calc(100vw - 60px);
+    }
+    .column-2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}
+@media screen and (min-width: 960px) {
+    .container {
+        max-width: calc(100vw - 80px);
+    }
+    .column-2 {
+        gap: 15px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .container {
+        max-width: 1080px;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1120px;
+    }
+}

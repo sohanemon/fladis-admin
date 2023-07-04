@@ -1,0 +1,14 @@
+.dashboardLayout {
+    background-color: rgba(127, 255, 212, 0.7);
+    padding: 0 30px 30px 30px;
+    &-title {
+        text-align: center;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    &-children {
+        background-color: rgb(127, 255, 212);
+        padding: 0 30px 30px 30px;
+        text-align: end;
+    }
+}

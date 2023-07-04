@@ -1,2 +1,11 @@
-@import "./page";
-@import "./layout";
+@import "./(dashboard)/dashboard";
+@import "./(loginForgotPassword)/loginForgotPassword";
+
+.mainLayout {
+    background-color: rgba(127, 255, 212, 0.5);
+    padding: 0 50px 50px 50px;
+    &-title {
+        font-weight: 600;
+        font-size: 25px;
+    }
+}

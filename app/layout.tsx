@@ -4,6 +4,7 @@ import { MuiTheme } from "@/theme/MuiTheme";
 import { poppins } from "./fonts";
 import { ReactNode, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { Modal } from "@/components/atoms/Modal";
 
 export const metadata = {
   title: "Fladis-Erp",
@@ -27,6 +28,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
           <p className="mainLayout-title">Main Layout</p>
           <hr />
           <main>{children}</main>
+          <Modal />
         </body>
       </MuiTheme>
     </html>

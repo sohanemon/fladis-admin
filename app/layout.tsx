@@ -1,14 +1,13 @@
-"use client";
-import "../styles/main.scss";
-import { MuiTheme } from "@/theme/MuiTheme";
-import { poppins } from "./fonts";
-import { ReactNode, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { Modal } from "@/components/atoms/Modal";
+import '../styles/main.scss';
+import { MuiTheme } from '@/theme/MuiTheme';
+import { poppins } from './fonts';
+import { ReactNode, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { Modal } from '@/components/atoms/Modal';
 
 export const metadata = {
-  title: "Fladis-Erp",
-  description: "Fladis Admin Panel",
+  title: 'Fladis-Erp',
+  description: 'Fladis Admin Panel',
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
@@ -16,16 +15,16 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
   useEffect(() => {
     if (isUserAuthenticated) {
-      router.push("/dashboard");
+      router.push('/dashboard');
     } else {
-      router.push("/login");
+      router.push('/login');
     }
   }, [isUserAuthenticated]);
   return (
-    <html lang="en">
+    <html lang='en'>
       <MuiTheme>
         <body className={`${poppins.className} mainLayout`}>
-          <p className="mainLayout-title">Main Layout</p>
+          <p className='mainLayout-title'>Main Layout</p>
           <hr />
           <main>{children}</main>
           <Modal />

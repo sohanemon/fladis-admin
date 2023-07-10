@@ -15,8 +15,6 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
     <html lang='en'>
       <body className={`${poppins.className} mainLayout`}>
         <ClientProvider>
-          <p className='mainLayout-title'>Main Layout</p>
-          <hr />
           <main>{children}</main>
           <Modal />
         </ClientProvider>

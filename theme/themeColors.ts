@@ -2,7 +2,6 @@ export const primary = {
   light: '#7e339c',
   main: '#5E0084',
   dark: '#41005c',
-  contrastText: '#FFF',
 };
 
 export const secondary = {

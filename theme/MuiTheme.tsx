@@ -1,9 +1,9 @@
-import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
-import { FC, ReactNode } from "react";
-import { components } from "./components";
-import { themeColors } from "./themeColors";
-import { typography } from "./typography";
-import { CssBaseline } from "@mui/material";
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material';
+import { FC, ReactNode } from 'react';
+import { components } from './components';
+import { themeColors } from './themeColors.bak';
+import { typography } from './typography';
+import { CssBaseline } from '@mui/material';
 
 type MuiThemeProps = {
   children?: ReactNode;

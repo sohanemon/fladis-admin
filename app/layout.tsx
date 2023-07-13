@@ -13,7 +13,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang='en'>
-      <body className={`${poppins.className} mainLayout`}>
+      <body className={`${poppins.className} ${poppins.variable} mainLayout`}>
         <ClientProvider>
           <main>{children}</main>
           <Modal />

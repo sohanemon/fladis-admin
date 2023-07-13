@@ -1,6 +1,12 @@
 @import './dashboard/dashboard';
 @import './(loginForgotPassword)/loginForgotPassword';
 
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .mainLayout {
   background-color: #eff2f6;
   // padding: 0 50px 50px 50px;

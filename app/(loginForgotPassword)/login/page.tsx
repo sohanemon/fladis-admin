@@ -1,11 +1,12 @@
-import { Button } from '@/components/atoms/Button';
-import React from 'react';
+import { Text } from '@/components/atoms/Text';
 
 const Login = () => {
   return (
     <div>
-      Login
-      <Button variant='contained'>Lol</Button>
+      <Text variant='h4'>Log in</Text>
+      <Text color={'muted.main'} variant='body2'>
+        Enter your credentials to continue
+      </Text>
     </div>
   );
 };

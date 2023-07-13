@@ -8,12 +8,17 @@ export const secondary = {
   light: '#46bcfe',
   main: '#18ACFE',
   dark: '#1078b1',
-  contrastText: '#FFF',
+};
+
+export const muted = {
+  main: '#A5A5A5',
+  contrastText: '#fff',
 };
 
 export const themeColors = {
   primary,
   secondary,
+  muted,
   divider: 'rgba(169, 170, 173, 0.3)',
   text: {
     primary: '#000',

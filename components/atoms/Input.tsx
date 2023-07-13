@@ -14,16 +14,21 @@ interface InputWithIconProps {
 }
 export function InputWithIcon(props: InputWithIconProps) {
   const [focused, setFocused] = useState(false);
+  const [isError, setIsError] = useState(false);
   function Icon({
     icon: Icon,
   }: {
     icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
   }) {
-    return <Icon color={(focused ? 'primary' : '') as any} />;
+    return (
+      <Icon color={(isError ? 'error' : focused ? 'primary' : '') as any} />
+    );
   }
   return (
     <TextField
       fullWidth
+      size='small'
+      error={isError}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
       label={focused ? props.label?.toString() : null}

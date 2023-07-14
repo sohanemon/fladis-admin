@@ -1,4 +1,5 @@
 'use client';
+import { Modal } from '@/components/atoms/Modal';
 import LoginBox from '@/components/molecules/login-box';
 import LockIcon from '@mui/icons-material/Lock';
 import MailIcon from '@mui/icons-material/Mail';

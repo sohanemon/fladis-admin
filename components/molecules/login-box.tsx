@@ -37,21 +37,23 @@ export default function LoginBox(props: Props) {
             <Link href={'/forgot-password'}>Forgot password?</Link>
           </Text>
         )}
-        <Stack>
-          <Text color={'muted.light'} variant='subtitle2'>
-            Verification code
-          </Text>
-          <div className='verification-input'>
-            {Array.from(Array(6)).map((_) => (
-              <input
-                type='number'
-                key={_}
-                maxLength={1}
-                onInput={(e) => maxLengthCheck(e)}
-              />
-            ))}
-          </div>
-        </Stack>
+        {props.verification && (
+          <Stack>
+            <Text color={'muted.light'} variant='subtitle2'>
+              Verification code
+            </Text>
+            <div className='verification-input'>
+              {Array.from(Array(6)).map((_) => (
+                <input
+                  type='number'
+                  key={_}
+                  maxLength={1}
+                  onInput={(e) => maxLengthCheck(e)}
+                />
+              ))}
+            </div>
+          </Stack>
+        )}
         <Button
           onClick={() => props.action?.()}
           variant='contained'

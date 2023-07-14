@@ -26,7 +26,7 @@ const data = {
     },
     {
       label: 'Password',
-      placeholder: '******',
+      placeholder: '',
       type: 'password',
       icon: LockIcon,
     },

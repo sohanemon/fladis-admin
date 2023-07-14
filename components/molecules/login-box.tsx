@@ -1,13 +1,15 @@
-import { Box, SvgIconTypeMap } from '@mui/material';
+import { Box, Stack, SvgIconTypeMap } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 import Link from 'next/link';
 import { Button } from '../atoms/Button';
 import { InputWithIcon } from '../atoms/Input';
 import { Text } from '../atoms/Text';
+import { maxLengthCheck } from '@/lib/utils';
 
 interface Props {
   forgotPassword?: boolean;
   heading: string;
+  verification?: boolean;
   caption: string;
   form: {
     label: string;
@@ -35,7 +37,21 @@ export default function LoginBox(props: Props) {
             <Link href={'/forgot-password'}>Forgot password?</Link>
           </Text>
         )}
-
+        <Stack>
+          <Text color={'muted.light'} variant='subtitle2'>
+            Verification code
+          </Text>
+          <div className='verification-input'>
+            {Array.from(Array(6)).map((_) => (
+              <input
+                type='number'
+                key={_}
+                maxLength={1}
+                onInput={(e) => maxLengthCheck(e)}
+              />
+            ))}
+          </div>
+        </Stack>
         <Button
           onClick={() => props.action?.()}
           variant='contained'

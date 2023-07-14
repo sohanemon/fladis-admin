@@ -1,1 +1,25 @@
-@import "./Card/Card";
+@import './Card/Card';
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.verification-input {
+  display: flex;
+  justify-content: space-between;
+  input {
+    width: clamp(55px, 10%, 60px);
+    background-color: transparent;
+    border-radius: 5px;
+    height: 3rem;
+    outline: purple;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+  }
+}

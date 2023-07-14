@@ -1,7 +1,10 @@
 'use client';
+import { Text } from '@/components/atoms/Text';
 import LoginBox from '@/components/molecules/login-box';
 import { useModalStore } from '@/zustand-store/Modal.store';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import MailIcon from '@mui/icons-material/Mail';
+import { Box, Stack } from '@mui/material';
 
 const ForgotPassword = () => {
   return (
@@ -26,11 +29,14 @@ const data = {
   ],
   action: () => {
     useModalStore.getState().setModalShow(true);
-    useModalStore
-      .getState()
-      .setModalContent(
-        ' lorem, ipsum dolor sit amet consectetur adipisicing elit. ullam odio hic nisi voluptatem reprehenderit, cum quidem aliquam beatae asperiores dignissimos libero dolor ea fugit possimus eos, quisquam iste nostrum fuga.'
-      );
+    useModalStore.getState().setModalContent(
+      <Stack spacing={6} p={5} className='success-modal' alignItems={'center'}>
+        <CheckCircleOutlineIcon color='success' sx={{ fontSize: 83 }} />
+        <Text sx={{ textAlign: 'center' }}>
+          We have send a password reset link to your email.
+        </Text>
+      </Stack>
+    );
   },
   actionName: 'Send Mail',
 };

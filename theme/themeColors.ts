@@ -12,6 +12,7 @@ export const secondary = {
 
 export const muted = {
   main: '#A5A5A5',
+  light: '#C4C4C4',
   contrastText: '#fff',
 };
 

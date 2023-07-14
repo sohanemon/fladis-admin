@@ -8,9 +8,10 @@ import TextField, { TextFieldProps } from '@mui/material/TextField';
 import { useState } from 'react';
 
 interface InputWithIconProps {
-  icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
   placeholder: string;
   label: string;
+  type: string;
+  icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
 }
 export function InputWithIcon(props: InputWithIconProps) {
   const [focused, setFocused] = useState(false);
@@ -27,6 +28,7 @@ export function InputWithIcon(props: InputWithIconProps) {
   return (
     <TextField
       fullWidth
+      type={props.type}
       size='small'
       error={isError}
       onFocus={() => setFocused(true)}

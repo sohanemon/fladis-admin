@@ -1,5 +1,6 @@
 'use client';
 import { Navbar } from '@/components/molecules/navbar';
+import NavbarContent from '@/components/molecules/navbar-content';
 import { Sidebar } from '@/components/molecules/sidebar';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -25,38 +26,7 @@ export default function DashboardLayout() {
   return (
     <Box sx={{ display: 'flex' }}>
       <Navbar position='absolute' open={open}>
-        <Toolbar
-          sx={{
-            pr: '24px', // keep right padding when drawer closed
-          }}
-        >
-          <IconButton
-            edge='start'
-            color='inherit'
-            aria-label='open drawer'
-            onClick={toggleDrawer}
-            sx={{
-              marginRight: '36px',
-              ...(open && { display: 'none' }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            component='h1'
-            variant='h6'
-            color='inherit'
-            noWrap
-            sx={{ flexGrow: 1 }}
-          >
-            Dashboard
-          </Typography>
-          <IconButton color='inherit'>
-            <Badge badgeContent={4} color='secondary'>
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-        </Toolbar>
+        <NavbarContent open={open} toggleDrawer={toggleDrawer} />
       </Navbar>
       <Sidebar variant='permanent' open={open}>
         <Toolbar

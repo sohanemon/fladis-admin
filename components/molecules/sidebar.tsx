@@ -1,6 +1,8 @@
-const drawerWidth: number = 240;
 import MuiDrawer from '@mui/material/Drawer';
 import { styled } from '@mui/material/styles';
+
+const drawerWidth: number = 240;
+
 export const Sidebar = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({

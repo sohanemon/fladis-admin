@@ -1,9 +1,8 @@
 import { Modal } from '@/components/atoms/Modal';
-import { MuiTheme } from '@/theme/MuiTheme';
+import ClientProvider from '@/contexts/client-provider';
 import { ReactNode } from 'react';
 import '../styles/main.scss';
 import { poppins } from './fonts';
-import ClientProvider from '@/contexts/client-provider';
 
 export const metadata = {
   title: 'Fladis-Erp',

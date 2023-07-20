@@ -4,6 +4,7 @@ import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import SearchField from '../atoms/search-field';
 
 export default function NavbarContent({
   open,
@@ -30,15 +31,7 @@ export default function NavbarContent({
       >
         <MenuIcon color='primary' sx={{ p: 0.3 }} />
       </IconButton>
-      <Typography
-        component='h1'
-        variant='h6'
-        color='inherit'
-        noWrap
-        sx={{ flexGrow: 1 }}
-      >
-        Dashboard
-      </Typography>
+      <SearchField />
       <IconButton color='inherit'>
         <Badge badgeContent={4} color='secondary'>
           <NotificationsIcon />

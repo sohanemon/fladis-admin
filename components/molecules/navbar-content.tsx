@@ -1,10 +1,8 @@
-import MenuIcon from '@mui/icons-material/Menu';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import Badge from '@mui/material/Badge';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import SearchField from '../atoms/search-field';
+import NavbarActions from './navbar-actions';
 
 export default function NavbarContent({
   open,
@@ -29,14 +27,10 @@ export default function NavbarContent({
           ...(open && { display: 'none' }),
         }}
       >
-        <MenuIcon color='primary' sx={{ p: 0.3 }} />
+        <MenuRoundedIcon color='primary' sx={{ p: 0.3 }} />
       </IconButton>
       <SearchField />
-      <IconButton color='inherit'>
-        <Badge badgeContent={4} color='secondary'>
-          <NotificationsIcon />
-        </Badge>
-      </IconButton>
+      <NavbarActions />
     </Toolbar>
   );
 }

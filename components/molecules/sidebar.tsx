@@ -9,6 +9,7 @@ export const Sidebar = styled(MuiDrawer, {
   '& .MuiDrawer-paper': {
     position: 'relative',
     whiteSpace: 'nowrap',
+    border: 0,
     width: drawerWidth,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
@@ -17,6 +18,7 @@ export const Sidebar = styled(MuiDrawer, {
     boxSizing: 'border-box',
     ...(!open && {
       overflowX: 'hidden',
+
       transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,

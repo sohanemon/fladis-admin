@@ -28,7 +28,7 @@ export default function NavbarContent({
           ...(open && { display: 'none' }),
         }}
       >
-        <MenuIcon />
+        <MenuIcon color='primary' sx={{ p: 0.3 }} />
       </IconButton>
       <Typography
         component='h1'

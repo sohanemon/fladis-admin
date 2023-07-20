@@ -1,6 +1,9 @@
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+'use client';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Box, Stack } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
+import Brand from '../atoms/Brand';
 
 export default function SidebarContent({
   toggleDrawer,
@@ -8,17 +11,18 @@ export default function SidebarContent({
   toggleDrawer: () => void;
 }) {
   return (
-    <Toolbar
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        px: [1],
-      }}
+    <Stack
+      direction={'row'}
+      justifyContent={'space-between'}
+      alignItems={'center'}
+      p={1}
     >
-      <IconButton onClick={toggleDrawer}>
-        <ChevronLeftIcon />
-      </IconButton>
-    </Toolbar>
+      <div className='dashboard__logo'>
+        <Brand />
+      </div>
+      <div className='dashboard__menu-container' onClick={toggleDrawer}>
+        <MenuIcon color='primary' sx={{ p: 0.3 }} />
+      </div>
+    </Stack>
   );
 }

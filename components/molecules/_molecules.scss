@@ -23,3 +23,20 @@ input[type='number'] {
     border: 1px solid #d9d9d9;
   }
 }
+
+.dashboard__menu-container {
+  background-color: #7e339c1a;
+
+  &:hover {
+    background-color: #7e339c2d;
+  }
+  height: 24px;
+  border-radius: 5px;
+  padding: 0 2px;
+  cursor: pointer;
+}
+
+.dashboard__logo {
+  width: 34px;
+  height: 32px;
+}

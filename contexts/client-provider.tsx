@@ -11,12 +11,12 @@ export default function ClientProvider({
 }) {
   const isUserAuthenticated: boolean = false;
   const router = useRouter();
-  useEffect(() => {
-    if (isUserAuthenticated) {
-      router.push('/dashboard');
-    } else {
-      router.push('/login');
-    }
-  }, [isUserAuthenticated, router]);
+  // useEffect(() => {
+  //   if (isUserAuthenticated) {
+  //     router.push('/dashboard');
+  //   } else {
+  //     router.push('/login');
+  //   }
+  // }, [isUserAuthenticated, router]);
   return <MuiTheme>{children}</MuiTheme>;
 }

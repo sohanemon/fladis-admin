@@ -3,6 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import SearchField from '../atoms/search-field';
 import NavbarActions from './navbar-actions';
+import { Stack } from '@mui/material';
 
 export default function NavbarContent({
   open,
@@ -12,10 +13,12 @@ export default function NavbarContent({
   toggleDrawer: () => void;
 }) {
   return (
-    <Toolbar
-      sx={{
-        pr: '24px', // keep right padding when drawer closed
-      }}
+    <Stack
+      direction={'row'}
+      alignItems={'center'}
+      justifyContent={'space-between'}
+      px={2}
+      py={1}
     >
       <IconButton
         edge='start'
@@ -31,6 +34,6 @@ export default function NavbarContent({
       </IconButton>
       <SearchField />
       <NavbarActions />
-    </Toolbar>
+    </Stack>
   );
 }

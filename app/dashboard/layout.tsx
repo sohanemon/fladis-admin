@@ -1,5 +1,6 @@
 'use client';
 import { Navbar } from '@/components/molecules/navbar';
+import { Sidebar } from '@/components/molecules/sidebar';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -58,7 +59,7 @@ export default function DashboardLayout() {
           </IconButton>
         </Toolbar>
       </Navbar>
-      <Drawer variant='permanent' open={open}>
+      <Sidebar variant='permanent' open={open}>
         <Toolbar
           sx={{
             display: 'flex',
@@ -72,7 +73,7 @@ export default function DashboardLayout() {
           </IconButton>
         </Toolbar>
         <Divider />
-      </Drawer>
+      </Sidebar>
       <Box
         component='main'
         sx={{
@@ -122,32 +123,5 @@ export default function DashboardLayout() {
     </Box>
   );
 }
-const drawerWidth: number = 240;
-const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-  '& .MuiDrawer-paper': {
-    position: 'relative',
-    whiteSpace: 'nowrap',
-    width: drawerWidth,
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    boxSizing: 'border-box',
-    ...(!open && {
-      overflowX: 'hidden',
-      transition: theme.transitions.create('width', {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      width: theme.spacing(7),
-      [theme.breakpoints.up('sm')]: {
-        width: theme.spacing(9),
-      },
-    }),
-  },
-}));
-
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();

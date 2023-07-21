@@ -15,6 +15,13 @@ import { useState } from 'react';
 import { SvgIconTypeMap } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
+interface ListType {
+  label: string;
+  link: string;
+  Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
+  nested?: ListType[];
+}
+
 export default function SidebarList() {
   return (
     <List component='nav'>
@@ -57,15 +64,7 @@ const data = [
   },
 ];
 
-function ListItem({
-  label,
-  link,
-  Icon,
-}: {
-  label: string;
-  link: string;
-  Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
-}) {
+function ListItem({ label, link, Icon }: ListType) {
   return (
     <ListItemButton>
       <ListItemIcon>
@@ -75,20 +74,7 @@ function ListItem({
     </ListItemButton>
   );
 }
-const NestedListItem = ({
-  label,
-  link,
-  Icon,
-  nested,
-}: {
-  label: string;
-  link: string;
-  Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
-  nested: {
-    label: string;
-    link: string;
-  }[];
-}) => {
+const NestedListItem = ({ label, link, Icon, nested }: ListType) => {
   const [open, setOpen] = useState(true);
   const handleClick = () => {
     setOpen(!open);
@@ -105,7 +91,7 @@ const NestedListItem = ({
       </ListItemButton>
       <Collapse in={open} timeout='auto' unmountOnExit>
         <List component='div' disablePadding>
-          {nested.map((_) => (
+          {nested?.map((_) => (
             <ListItem key={_.label} {..._} />
           ))}
         </List>

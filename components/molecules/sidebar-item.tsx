@@ -7,6 +7,7 @@ import StarBorder from '@mui/icons-material/StarBorder';
 import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
@@ -17,10 +18,13 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 export default function SidebarList() {
   return (
     <List component='nav'>
-      {data.map((item) => (
-        <ListItem key={item.label} {...item} />
-      ))}
-      <NestedListItem />
+      {data.map((item) => {
+        return item.nested ? (
+          <NestedListItem key={item.label} {...item} />
+        ) : (
+          <ListItem key={item.label} {...item} />
+        );
+      })}
     </List>
   );
 }
@@ -36,11 +40,19 @@ const data = [
     link: 'administration',
     Icon: AdminPanelSettingsIcon,
     nested: [
-      { label: 'User', link: 'user' },
-      { label: 'Authorization', link: 'authorization' },
-      { label: 'Configuration', link: 'configuration' },
-      { label: 'Stores', link: 'stores' },
-      { label: 'Warehouses', link: 'warehouses' },
+      { Icon: FiberManualRecordIcon, label: 'User', link: 'user' },
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Authorization',
+        link: 'authorization',
+      },
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Configuration',
+        link: 'configuration',
+      },
+      { Icon: FiberManualRecordIcon, label: 'Stores', link: 'stores' },
+      { Icon: FiberManualRecordIcon, label: 'Warehouses', link: 'warehouses' },
     ],
   },
 ];
@@ -63,7 +75,20 @@ function ListItem({
     </ListItemButton>
   );
 }
-const NestedListItem = () => {
+const NestedListItem = ({
+  label,
+  link,
+  Icon,
+  nested,
+}: {
+  label: string;
+  link: string;
+  Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
+  nested: {
+    label: string;
+    link: string;
+  }[];
+}) => {
   const [open, setOpen] = useState(true);
   const handleClick = () => {
     setOpen(!open);
@@ -75,17 +100,14 @@ const NestedListItem = () => {
         <ListItemIcon>
           <InboxIcon />
         </ListItemIcon>
-        <ListItemText primary='Inbox' />
+        <ListItemText primary={label} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout='auto' unmountOnExit>
         <List component='div' disablePadding>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary='Starred' />
-          </ListItemButton>
+          {nested.map((_) => (
+            <ListItem key={_.label} {..._} />
+          ))}
         </List>
       </Collapse>
     </>

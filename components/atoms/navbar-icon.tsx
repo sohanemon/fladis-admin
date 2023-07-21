@@ -9,7 +9,7 @@ export default function NavbarIcon({
   color: any;
 }) {
   return (
-    <Box bgcolor={color + '15'} borderRadius={1.2} p={0.3} height={30}>
+    <Box bgcolor={color + '15'} borderRadius={1.4} p={0.3} height={30}>
       <Icon sx={{ color, padding: 0.2 }} />
     </Box>
   );

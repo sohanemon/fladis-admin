@@ -1,2 +1,43 @@
-@import "./LoadingStatus/LoadingStatus";
-@import "./NoResultsFound/NoResultsFound";
+@import './LoadingStatus/LoadingStatus';
+@import './NoResultsFound/NoResultsFound';
+.notification-popover__trigger {
+  position: relative;
+}
+
+.notification-popover__content {
+  position: absolute;
+  background: #fff;
+  font-size: 12px;
+  width: 345px;
+  height: 437px;
+  right: 5px;
+  top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  box-shadow: 5px 2px 25px 1px rgba(128, 128, 128, 0.26);
+  hr {
+    border-top: 1px dashed #f2f2f2;
+    margin-top: 1rem;
+  }
+  .head {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 0.4rem;
+    span.count {
+      background: #5f0084;
+      color: white;
+      margin-left: 0.5rem;
+      border-radius: 999px;
+      padding: 1px 14px;
+    }
+
+    .icon {
+      width: 24px;
+      aspect-ratio: 1/1;
+      border-radius: 999px;
+      display: grid;
+      place-content: center;
+      background: #5f008415;
+    }
+  }
+}

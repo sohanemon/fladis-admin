@@ -3,11 +3,14 @@ import NotificationsNoneRoundedIcon from '@mui/icons-material/NotificationsNoneR
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import NavbarIcon from '../atoms/navbar-icon';
 import { Avatar, Box, Stack } from '@mui/material';
+import NotificationPopover from '../atoms/popover';
 export default function NavbarActions() {
   return (
     <Stack direction={'row'} gap={1}>
       <NavbarIcon Icon={CalendarMonthRoundedIcon} color='#18ACFE' />
-      <NavbarIcon Icon={NotificationsNoneRoundedIcon} color='#5E0084' />
+      <NotificationPopover>
+        <NavbarIcon Icon={NotificationsNoneRoundedIcon} color='#5E0084' />
+      </NotificationPopover>
       <Stack
         direction={'row'}
         height={32}

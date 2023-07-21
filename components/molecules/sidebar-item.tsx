@@ -15,7 +15,7 @@ import { useState } from 'react';
 
 interface ListType {
   label: string;
-  link: string;
+  slug: string;
   Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
   nested?: ListType[];
 }
@@ -37,34 +37,34 @@ export default function SidebarList() {
 const data = [
   {
     label: 'Dashboard',
-    link: '',
+    slug: '',
     Icon: LayersIcon,
   },
   {
     label: 'Administration',
-    link: 'administration',
+    slug: 'administration',
     Icon: AdminPanelSettingsIcon,
     nested: [
-      { Icon: FiberManualRecordIcon, label: 'User', link: 'user' },
+      { Icon: FiberManualRecordIcon, label: 'User', slug: 'user' },
       {
         Icon: FiberManualRecordIcon,
         label: 'Authorization',
-        link: 'authorization',
+        slug: 'authorization',
       },
       {
         Icon: FiberManualRecordIcon,
         label: 'Configuration',
-        link: 'configuration',
+        slug: 'configuration',
       },
-      { Icon: FiberManualRecordIcon, label: 'Stores', link: 'stores' },
-      { Icon: FiberManualRecordIcon, label: 'Warehouses', link: 'warehouses' },
+      { Icon: FiberManualRecordIcon, label: 'Stores', slug: 'stores' },
+      { Icon: FiberManualRecordIcon, label: 'Warehouses', slug: 'warehouses' },
     ],
   },
 ];
 
 function ListItem({
   label,
-  link,
+  slug,
   Icon,
   inner,
 }: ListType & { inner?: boolean }) {
@@ -77,7 +77,7 @@ function ListItem({
     </ListItemButton>
   );
 }
-const NestedListItem = ({ label, link, Icon, nested }: ListType) => {
+const NestedListItem = ({ label, slug, Icon, nested }: ListType) => {
   const [open, setOpen] = useState(true);
   const handleClick = () => {
     setOpen(!open);

@@ -1,4 +1,5 @@
 'use client';
+import DashboardCard from '@/components/molecules/dashboard-card';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -10,48 +11,25 @@ export default function Page() {
     <Box
       component='main'
       sx={{
-        backgroundColor: (theme) =>
-          theme.palette.mode === 'light'
-            ? theme.palette.grey[100]
-            : theme.palette.grey[900],
         flexGrow: 1,
         height: '100vh',
         overflow: 'auto',
+        px: 3,
+        py: 1,
       }}
     >
       <Toolbar />
-      <Container maxWidth='lg' sx={{ mt: 4, mb: 4 }}>
-        <Grid container spacing={3}>
-          {/* Chart */}
-          <Grid item xs={12} md={8} lg={9}>
-            <Paper
-              sx={{
-                p: 2,
-                display: 'flex',
-                flexDirection: 'column',
-                height: 240,
-              }}
-            ></Paper>
-          </Grid>
-          {/* Recent Deposits */}
-          <Grid item xs={12} md={4} lg={3}>
-            <Paper
-              sx={{
-                p: 2,
-                display: 'flex',
-                flexDirection: 'column',
-                height: 240,
-              }}
-            ></Paper>
-          </Grid>
-          {/* Recent Orders */}
-          <Grid item xs={12}>
-            <Paper
-              sx={{ p: 2, display: 'flex', flexDirection: 'column' }}
-            ></Paper>
-          </Grid>
+      <div className='heading'>
+        <h1>Dashboard</h1>
+        <p>Let&apos;s discover the news of the month</p>
+      </div>
+      <Grid container>
+        <Grid item md={8} xs={12}>
+          <div className='card-container'>
+            <DashboardCard />
+          </div>
         </Grid>
-      </Container>
+      </Grid>
     </Box>
   );
 }

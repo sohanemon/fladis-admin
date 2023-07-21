@@ -13,17 +13,16 @@
   height: 437px;
   right: 5px;
   top: 1rem;
-  padding: 0.8rem 1.5rem;
   border-radius: 5px;
   box-shadow: 5px 2px 25px 1px rgba(128, 128, 128, 0.26);
   hr {
     border-top: 1px dashed #f2f2f2;
-    margin-top: 1rem;
   }
   .head {
     display: flex;
     justify-content: space-between;
     margin-block: 0.4rem;
+    padding: 0.8rem 1.5rem;
     span.count {
       background: #5f0084;
       color: white;
@@ -39,6 +38,34 @@
       display: grid;
       place-content: center;
       background: #5f008415;
+    }
+  }
+  .notifications {
+    overflow-y: auto;
+    height: 80%;
+  }
+}
+
+.notification__notifications {
+  display: flex;
+  padding: 0.8rem 1.5rem;
+
+  border-bottom: 1px solid rgba(204, 204, 204, 0.27);
+  gap: 1rem;
+  &:last-child {
+    border: 0;
+  }
+  &:hover {
+    background-color: rgba(94, 0, 132, 0.03);
+  }
+  > div {
+    .name {
+      font-size: 10px;
+    }
+    .muted {
+      font-size: 8px;
+      color: #a5a5a5;
+      line-height: normal;
     }
   }
 }

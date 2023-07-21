@@ -21,7 +21,7 @@ export default function NavbarActions() {
         gap={0.5}
       >
         <Avatar sx={{ width: 25, height: 25 }}>A</Avatar>
-        <SettingsOutlinedIcon color='secondary' sx={{ p: 0.3 }} />
+        <SettingsOutlinedIcon color='secondary' sx={{ p: 0.3, mr: 0.4 }} />
       </Stack>
     </Stack>
   );

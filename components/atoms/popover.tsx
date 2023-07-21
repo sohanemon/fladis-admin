@@ -1,4 +1,5 @@
 import * as Pop from '@radix-ui/react-popover';
+import Notifications from './notifications';
 
 const NotificationPopover = ({ children }: { children: React.ReactNode }) => (
   <Pop.Root>
@@ -32,6 +33,11 @@ const NotificationPopover = ({ children }: { children: React.ReactNode }) => (
           </Pop.Close>
         </div>
         <hr />
+        <div className='notifications'>
+          {Array.from(Array(9)).map((_) => (
+            <Notifications key={_} />
+          ))}
+        </div>
       </Pop.Content>
     </Pop.Portal>
   </Pop.Root>

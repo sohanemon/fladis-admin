@@ -1,4 +1,5 @@
 'use client';
+import Chart from '@/components/molecules/chart';
 import DashboardCard from '@/components/molecules/dashboard-card';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -29,6 +30,7 @@ export default function Page() {
             <DashboardCard variant='primary' />
             <DashboardCard variant='secondary' />
           </div>
+          <Chart />
         </Grid>
       </Grid>
     </Box>

@@ -26,7 +26,8 @@ export default function Page() {
       <Grid container>
         <Grid item md={8} xs={12}>
           <div className='card-container'>
-            <DashboardCard />
+            <DashboardCard variant='primary' />
+            <DashboardCard variant='secondary' />
           </div>
         </Grid>
       </Grid>

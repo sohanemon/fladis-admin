@@ -4,7 +4,7 @@ export default function DashboardCard({
   variant: 'primary' | 'secondary';
 }) {
   return (
-    <section className='dashboard-card'>
+    <section className={'dashboard-card ' + variant}>
       <div className='icon'>
         <svg
           xmlns='http://www.w3.org/2000/svg'

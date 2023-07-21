@@ -67,5 +67,14 @@
       color: #a5a5a5;
       line-height: normal;
     }
+    .timestamp {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      p {
+        font-size: 7px;
+        color: #a5a5a5;
+      }
+    }
   }
 }

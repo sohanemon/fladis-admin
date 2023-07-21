@@ -11,11 +11,13 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 interface ListType {
   label: string;
-  slug: string;
+  slug?: string;
   Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
   nested?: ListType[];
 }
@@ -37,27 +39,38 @@ export default function SidebarList() {
 const data = [
   {
     label: 'Dashboard',
-    slug: '',
+    slug: '/dashboard',
     Icon: LayersIcon,
   },
   {
     label: 'Administration',
-    slug: 'administration',
     Icon: AdminPanelSettingsIcon,
     nested: [
-      { Icon: FiberManualRecordIcon, label: 'User', slug: 'user' },
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'User',
+        slug: '/dashboard/administration/users',
+      },
       {
         Icon: FiberManualRecordIcon,
         label: 'Authorization',
-        slug: 'authorization',
+        slug: '/dashboard/administration/authorization',
       },
       {
         Icon: FiberManualRecordIcon,
         label: 'Configuration',
-        slug: 'configuration',
+        slug: '/dashboard/administration/configuration',
       },
-      { Icon: FiberManualRecordIcon, label: 'Stores', slug: 'stores' },
-      { Icon: FiberManualRecordIcon, label: 'Warehouses', slug: 'warehouses' },
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Stores',
+        slug: '/dashboard/administration/stores',
+      },
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Warehouses',
+        slug: '/dashboard/administration/warehouses',
+      },
     ],
   },
 ];
@@ -68,8 +81,9 @@ function ListItem({
   Icon,
   inner,
 }: ListType & { inner?: boolean }) {
+  const { push } = useRouter();
   return (
-    <ListItemButton>
+    <ListItemButton onClick={() => slug && push(slug)}>
       <ListItemIcon>
         <Icon sx={{ fontSize: inner ? 13 : null }} />{' '}
       </ListItemIcon>

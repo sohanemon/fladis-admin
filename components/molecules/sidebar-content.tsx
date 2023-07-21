@@ -10,7 +10,7 @@ export default function SidebarContent({
   toggleDrawer: () => void;
 }) {
   return (
-    <Box>
+    <Box minHeight={'100vh'}>
       <Stack
         direction={'row'}
         justifyContent={'space-between'}

@@ -28,6 +28,10 @@ body {
   line-height: 1.5rem;
   font-family: var(--poppins);
 }
+g.recharts-layer.recharts-cartesian-axis.recharts-yAxis.yAxis > g > g > line,
+g.recharts-layer.recharts-cartesian-axis.recharts-yAxis.yAxis > line {
+  display: none;
+}
 @media screen and (min-width: 680px) {
 }
 @media screen and (min-width: 960px) {

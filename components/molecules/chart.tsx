@@ -26,37 +26,37 @@ const data = [
     name: 'Mar',
     x: 2000,
     y: 9800,
-    z: 2290,
+    z: 5290,
   },
   {
     name: 'Apr',
     x: 2780,
     y: 3908,
-    z: 2000,
+    z: 3000,
   },
   {
     name: 'May',
     x: 1890,
     y: 4800,
-    z: 2181,
+    z: 4181,
   },
   {
     name: 'Jun',
     x: 2390,
     y: 3800,
-    z: 2500,
+    z: 7500,
   },
   {
     name: 'Jul',
     x: 3490,
     y: 4300,
-    z: 2100,
+    z: 6100,
   },
   {
     name: 'Aug',
     x: 2780,
     y: 3908,
-    z: 2000,
+    z: 12000,
   },
   {
     name: 'Sep',
@@ -68,7 +68,7 @@ const data = [
     name: 'Oct',
     x: 2390,
     y: 3800,
-    z: 2500,
+    z: 9500,
   },
   {
     name: 'Nov',
@@ -97,14 +97,12 @@ export default function Chart() {
         bottom: 5,
       }}
     >
-      <CartesianGrid strokeDasharray='3 3' />
       <XAxis dataKey='name' />
       <YAxis />
       <Tooltip />
-      <Legend />
-      <Bar dataKey='x' stackId='a' fill='#ABD1F6' />
-      <Bar dataKey='y' stackId='a' fill='#4BA3E2' />
-      <Bar dataKey='z' stackId='a' fill='#7859BC' />
+      <Bar dataKey='x' stackId='stacked' fill='#ABD1F6' />
+      <Bar dataKey='y' stackId='stacked' fill='#4BA3E2' />
+      <Bar dataKey='z' stackId='stacked' fill='#7859BC' />
     </BarChart>
   );
 }

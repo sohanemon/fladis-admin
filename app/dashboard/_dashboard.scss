@@ -8,6 +8,7 @@
 }
 
 .heading {
+  padding-bottom: 18px;
   color: #333d49;
   h1 {
     font-size: 14px;
@@ -21,7 +22,6 @@
 .card-container {
   display: grid;
   gap: 8px;
-  padding-top: 18px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 

@@ -1,6 +1,7 @@
 'use client';
 import Chart from '@/components/molecules/chart';
 import DashboardCard from '@/components/molecules/dashboard-card';
+import DashboardMiniCard from '@/components/molecules/dashboard-mini-card';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -24,13 +25,17 @@ export default function Page() {
         <h1>Dashboard</h1>
         <p>Let&apos;s discover the news of the month</p>
       </div>
-      <Grid container>
+      <Grid container spacing={[2, 3]}>
         <Grid item md={8} xs={12}>
           <div className='card-container'>
             <DashboardCard variant='primary' />
             <DashboardCard variant='secondary' />
           </div>
           <Chart />
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <DashboardMiniCard />
+          <DashboardMiniCard />
         </Grid>
       </Grid>
     </Box>

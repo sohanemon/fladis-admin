@@ -29,7 +29,9 @@ body {
   font-family: var(--poppins);
 }
 g.recharts-layer.recharts-cartesian-axis.recharts-yAxis.yAxis > g > g > line,
-g.recharts-layer.recharts-cartesian-axis.recharts-yAxis.yAxis > line {
+g.recharts-layer.recharts-cartesian-axis.recharts-yAxis.yAxis > line,
+g.recharts-layer.recharts-cartesian-axis.recharts-xAxis.xAxis > line,
+g.recharts-layer.recharts-cartesian-axis.recharts-xAxis.xAxis > g > g > line {
   display: none;
 }
 @media screen and (min-width: 680px) {

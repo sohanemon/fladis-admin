@@ -1,12 +1,10 @@
-import React from 'react';
 import {
-  BarChart,
   Bar,
+  BarChart,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
 } from 'recharts';
 
 const data = [
@@ -86,23 +84,25 @@ const data = [
 
 export default function Chart() {
   return (
-    <BarChart
-      width={500}
-      height={300}
-      data={data}
-      margin={{
-        top: 20,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <XAxis dataKey='name' />
-      <YAxis />
-      <Tooltip />
-      <Bar dataKey='x' stackId='stacked' fill='#ABD1F6' />
-      <Bar dataKey='y' stackId='stacked' fill='#4BA3E2' />
-      <Bar dataKey='z' stackId='stacked' fill='#7859BC' />
-    </BarChart>
+    <section className='chart'>
+      <ResponsiveContainer height={300}>
+        <BarChart
+          data={data}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <XAxis dataKey='name' />
+          <YAxis />
+          <Tooltip />
+          <Bar dataKey='x' stackId='stacked' fill='#ABD1F6' />
+          <Bar dataKey='y' stackId='stacked' fill='#4BA3E2' />
+          <Bar dataKey='z' stackId='stacked' fill='#7859BC' />
+        </BarChart>
+      </ResponsiveContainer>
+    </section>
   );
 }

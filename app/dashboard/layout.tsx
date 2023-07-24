@@ -3,8 +3,8 @@ import { Navbar } from '@/components/molecules/navbar';
 import NavbarContent from '@/components/molecules/navbar-content';
 import { Sidebar } from '@/components/molecules/sidebar';
 import SidebarContent from '@/components/molecules/sidebar-content';
+import { Toolbar } from '@mui/material';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import { useState } from 'react';
 
 export default function DashboardLayout({
@@ -25,7 +25,19 @@ export default function DashboardLayout({
       <Sidebar variant='permanent' open={open}>
         <SidebarContent toggleDrawer={toggleDrawer} />
       </Sidebar>
-      {children}
+      <Box
+        component='main'
+        sx={{
+          flexGrow: 1,
+          height: '100vh',
+          overflow: 'auto',
+          px: 3,
+          py: 1,
+        }}
+      >
+        <Toolbar />
+        {children}
+      </Box>
     </Box>
   );
 }

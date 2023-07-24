@@ -38,8 +38,8 @@ export default function SidebarList() {
 
 const data = [
   {
-    label: 'Dashboard',
     slug: '/dashboard',
+    label: 'Dashboard',
     Icon: LayersIcon,
   },
   {

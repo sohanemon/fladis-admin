@@ -1,8 +1,9 @@
 'use client';
-import React from 'react';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import { Box, Stack, Typography } from '@mui/material';
+import { FilledButton } from '@/components/atoms/Button';
 import { FilledInput } from '@/components/atoms/Input';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { Stack } from '@mui/material';
+import Image from 'next/image';
 
 const Users = () => {
   return (
@@ -15,9 +16,21 @@ const Users = () => {
           <span>Users</span>
         </p>
       </div>
-      <div>
+      <Stack direction={'row'} gap={[1, 2]}>
         <FilledInput placeholder='Search' />
-      </div>
+        <FilledButton
+          icon={
+            <Image
+              src={`/assets/images/filter.svg`}
+              alt=''
+              width={20}
+              height={20}
+            />
+          }
+        >
+          Filter
+        </FilledButton>
+      </Stack>
     </Stack>
   );
 };

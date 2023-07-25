@@ -13,16 +13,26 @@ export default function UserTable() {
   return (
     <TableContainer component={Paper}>
       <Table
-        sx={{ minWidth: 650, '& *': { fontSize: 12, color: '#313745' } }}
+        sx={{
+          minWidth: 650,
+          '& *': { fontSize: 12, color: '#313745', whiteSpace: 'nowrap' },
+        }}
         aria-label='simple table'
       >
-        <TableHead sx={{ '& *': { fontWeight: 600 } }}>
+        <TableHead
+          sx={{
+            '& *': { fontWeight: 600 },
+            background: 'rgba(94, 0, 132, 0.02)',
+          }}
+        >
           <TableRow>
             <TableCell sx={{ fontSize: 12 }}>#</TableCell>
             {Object.keys(body[0]).map((_) => (
               <TableCell
                 key={_}
-                align={_ === 'status' ? 'center' : 'left'}
+                align={
+                  _ === 'status' ? 'center' : _ === 'actions' ? 'right' : 'left'
+                }
                 sx={{ textTransform: 'capitalize', fontSize: 12 }}
               >
                 {_}
@@ -62,7 +72,7 @@ export default function UserTable() {
                   {status}
                 </Button>
               </TableCell>
-              <TableCell>
+              <TableCell align='right'>
                 <Actions />
               </TableCell>
             </TableRow>

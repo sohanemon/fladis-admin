@@ -1,9 +1,8 @@
 export const fontSize = 16;
-export const fontFamily = ["Poppins"].join(",");
 
 export const typography = {
   fontSize,
-  fontFamily,
+  fontFamily: `"Poppins", "Arial", sans-serif`,
   htmlFontSize: 16,
   body1: { fontSize },
   body2: { fontSize },

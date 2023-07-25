@@ -78,3 +78,22 @@
     }
   }
 }
+
+.filled-input {
+  border-radius: 8px;
+  background: #fff;
+  height: 37px;
+  display: flex;
+  padding: 0 12px;
+  align-items: center;
+  gap: 12px;
+
+  input {
+    width: 100%;
+    outline: none;
+    &::placeholder {
+      color: #5e6175;
+      font-size: 12px;
+    }
+  }
+}

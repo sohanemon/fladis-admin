@@ -1,11 +1,12 @@
 'use client';
 import React from 'react';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import { Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
+import { FilledInput } from '@/components/atoms/Input';
 
 const Users = () => {
   return (
-    <div>
+    <Stack direction={'row'} justifyContent={'space-between'}>
       <div className='heading'>
         <h1>Users</h1>
         <p>
@@ -14,7 +15,10 @@ const Users = () => {
           <span>Users</span>
         </p>
       </div>
-    </div>
+      <div>
+        <FilledInput placeholder='Search' />
+      </div>
+    </Stack>
   );
 };
 

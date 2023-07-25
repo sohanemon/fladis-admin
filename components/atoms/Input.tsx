@@ -1,11 +1,10 @@
 'use client';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import { IconProps, SvgIconTypeMap } from '@mui/material';
-import { InputProps } from '@mui/material/Input';
+import { SvgIconTypeMap } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
-import TextField, { TextFieldProps } from '@mui/material/TextField';
+import TextField from '@mui/material/TextField';
 import { useState } from 'react';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 interface InputWithIconProps {
   placeholder: string;
@@ -46,3 +45,24 @@ export function InputWithIcon(props: InputWithIconProps) {
     />
   );
 }
+
+import { HtmlHTMLAttributes, forwardRef } from 'react';
+
+interface FilledInputProps extends HtmlHTMLAttributes<HTMLInputElement> {}
+
+const FilledInput = forwardRef<HTMLInputElement, FilledInputProps>(
+  ({ className, ...props }, ref) => {
+    return (
+      <div className='filled-input'>
+        <SearchOutlinedIcon
+          className='icon'
+          sx={{ fill: '#E3E4E8', fontSize: 16 }}
+        />
+        <input ref={ref} {...props} />
+      </div>
+    );
+  }
+);
+
+FilledInput.displayName = 'FilledInput';
+export { FilledInput };

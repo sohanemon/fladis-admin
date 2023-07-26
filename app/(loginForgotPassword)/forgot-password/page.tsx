@@ -2,11 +2,11 @@
 import { Text } from '@/components/atoms/Text';
 import LoginBox from '@/components/molecules/login-box';
 import { useModalStore } from '@/zustand-store/Modal.store';
-import LockIcon from '@mui/icons-material/Lock';
 import usePasswordResetState from '@/zustand-store/password-reset-state';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import LockIcon from '@mui/icons-material/Lock';
 import MailIcon from '@mui/icons-material/Mail';
-import { Box, Stack } from '@mui/material';
+import { Stack } from '@mui/material';
 
 const ForgotPassword = () => {
   const step = usePasswordResetState((s) => s.step);

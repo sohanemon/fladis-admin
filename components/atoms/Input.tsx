@@ -1,7 +1,10 @@
 'use client';
 import { SvgIconTypeMap } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
-import { OverridableComponent } from '@mui/material/OverridableComponent';
+import {
+  OverridableComponent,
+  OverrideProps,
+} from '@mui/material/OverridableComponent';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -10,9 +13,13 @@ interface InputWithIconProps {
   placeholder?: string;
   label?: string;
   type?: string;
+  size?: 'small' | 'medium';
   icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
 }
-export function InputWithIcon(props: InputWithIconProps) {
+export function InputWithIcon({
+  size = 'small',
+  ...props
+}: InputWithIconProps) {
   const [focused, setFocused] = useState(false);
   const [isError, setIsError] = useState(false);
   function Icon({
@@ -28,7 +35,7 @@ export function InputWithIcon(props: InputWithIconProps) {
     <TextField
       fullWidth
       type={props.type}
-      size='small'
+      size={size}
       error={isError}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}

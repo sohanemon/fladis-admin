@@ -7,9 +7,9 @@ import { useState } from 'react';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 interface InputWithIconProps {
-  placeholder: string;
-  label: string;
-  type: string;
+  placeholder?: string;
+  label?: string;
+  type?: string;
   icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
 }
 export function InputWithIcon(props: InputWithIconProps) {

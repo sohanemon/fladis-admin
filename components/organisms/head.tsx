@@ -4,6 +4,7 @@ import Image from 'next/image';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import AddIcon from '@mui/icons-material/Add';
 import { FilledInput } from '../atoms/Input';
+import Link from 'next/link';
 
 export default function Heading() {
   return (
@@ -30,9 +31,11 @@ export default function Heading() {
         >
           Filter
         </FilledButton>
-        <FilledButton primary icon={<AddIcon sx={{ fontSize: 20 }} />}>
-          Add
-        </FilledButton>
+        <Link href={'/dashboard/administration/users/add-user'}>
+          <FilledButton primary icon={<AddIcon sx={{ fontSize: 20 }} />}>
+            Add
+          </FilledButton>
+        </Link>
       </Stack>
     </Stack>
   );

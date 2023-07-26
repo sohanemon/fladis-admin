@@ -2,7 +2,15 @@
 import { ButtonProps, Button as MuiButton } from '@mui/material';
 
 export const Button = (props: ButtonProps) => {
-  return <MuiButton {...props} />;
+  return (
+    <MuiButton
+      sx={[
+        { height: 40, borderRadius: '8px' },
+        ...(Array.isArray(props.sx) ? props.sx : [props.sx]),
+      ]}
+      {...props}
+    />
+  );
 };
 
 export const FilledButton = ({

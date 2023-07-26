@@ -73,7 +73,7 @@ export default function UserTable() {
                 </Button>
               </TableCell>
               <TableCell align='right'>
-                <Actions />
+                <Actions user={name.title} />
               </TableCell>
             </TableRow>
           ))}

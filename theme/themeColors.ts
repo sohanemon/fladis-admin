@@ -10,7 +10,7 @@ export const secondary = {
   dark: '#1078b1',
 };
 
-export const muted = {
+export const info = {
   main: '#A5A5A5',
   light: '#C4C4C4',
   contrastText: '#fff',
@@ -19,7 +19,7 @@ export const muted = {
 export const themeColors = {
   primary,
   secondary,
-  muted,
+  info,
   divider: 'rgba(169, 170, 173, 0.3)',
   text: {
     primary: '#000',

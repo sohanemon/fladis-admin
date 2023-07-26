@@ -1,10 +1,9 @@
-import AddUserForm from '@/components/molecules/add-user-form';
 import { Tabs } from '@/components/molecules/tabs';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-
-const User = () => {
+export default function Page() {
   return (
-    <div>
+    <section>
+      {' '}
       <div className='heading'>
         <h1>Add Users</h1>
         <p>
@@ -16,12 +15,9 @@ const User = () => {
         </p>
       </div>
       <Tabs tabs={tabs} />
-      <AddUserForm edit />
-    </div>
+    </section>
   );
-};
-
-export default User;
+}
 
 const tabs = [
   {

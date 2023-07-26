@@ -16,7 +16,6 @@ export default function AddUserForm({ edit }: { edit?: boolean }) {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
     <>
-      <Tabs tabs={tabs} />
       <Box
         padding={'14px 22px'}
         sx={{
@@ -115,15 +114,4 @@ const inputFields = [
   },
   { label: 'Phone', icon: LocalPhoneIcon, type: 'number' },
   { label: 'Email', icon: EmailIcon, type: 'email' },
-];
-
-const tabs = [
-  {
-    label: 'edit details',
-    link: '/dashboard/administration/users',
-  },
-  {
-    label: 'change password',
-    link: '/dashboard/administration/users/change-password',
-  },
 ];

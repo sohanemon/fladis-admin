@@ -35,7 +35,7 @@ const Stores = () => {
           >
             Filter
           </FilledButton>
-          <Link href={'/dashboard/administration/users/add-user'}>
+          <Link href={'/dashboard/administration/stores/add-story'}>
             <FilledButton primary icon={<AddIcon sx={{ fontSize: 20 }} />}>
               Add
             </FilledButton>

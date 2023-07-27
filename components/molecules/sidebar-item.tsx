@@ -19,6 +19,7 @@ interface ListType {
   slug?: string;
   Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
   nested?: ListType[];
+  inner?: boolean;
 }
 
 export default function SidebarList() {
@@ -53,7 +54,23 @@ const data = [
       {
         Icon: FiberManualRecordIcon,
         label: 'Authorization',
-        slug: '/dashboard/administration/authorization',
+        nested: [
+          {
+            Icon: FiberManualRecordIcon,
+            label: 'Permissions',
+            slug: '/dashboard/administration/authorization/permissions',
+          },
+          {
+            Icon: FiberManualRecordIcon,
+            label: 'Claim Types',
+            slug: '/dashboard/administration/authorization/claim-types',
+          },
+          {
+            Icon: FiberManualRecordIcon,
+            label: 'Roles',
+            slug: '/dashboard/administration/authorization/roles',
+          },
+        ],
       },
       {
         Icon: FiberManualRecordIcon,
@@ -90,7 +107,7 @@ function ListItem({
     </ListItemButton>
   );
 }
-const NestedListItem = ({ label, slug, Icon, nested }: ListType) => {
+const NestedListItem = ({ label, inner, slug, Icon, nested }: ListType) => {
   const [open, setOpen] = useState(true);
   const handleClick = () => {
     setOpen(!open);
@@ -100,16 +117,20 @@ const NestedListItem = ({ label, slug, Icon, nested }: ListType) => {
     <>
       <ListItemButton onClick={handleClick}>
         <ListItemIcon>
-          <InboxIcon />
+          <Icon sx={{ fontSize: inner ? 13 : null }} />
         </ListItemIcon>
         <ListItemText primary={label} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout='auto' unmountOnExit sx={{ pl: 2 }}>
         <List component='div' disablePadding>
-          {nested?.map((_) => (
-            <ListItem inner key={_.label} {..._} />
-          ))}
+          {nested?.map((_) => {
+            return _.nested ? (
+              <NestedListItem inner key={_.label} {..._} />
+            ) : (
+              <ListItem inner key={_.label} {..._} />
+            );
+          })}
         </List>
       </Collapse>
     </>

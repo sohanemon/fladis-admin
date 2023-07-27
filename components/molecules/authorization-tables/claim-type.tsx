@@ -1,4 +1,3 @@
-import { Button, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -6,10 +5,28 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Image from 'next/image';
 import Actions from '../actions';
 
-export default function ClaimTypesTable() {
+export default function ClaimTypesTable({ role }: { role?: boolean }) {
+  const body = role
+    ? [
+        { name: 'admin' },
+        { name: 'client' },
+        { name: 'deposit' },
+        { name: 'seller' },
+        { name: 'transporter' },
+      ]
+    : [
+        { 'claim type': 'VatType', date: '22/03/2023 11:05' },
+        { 'claim type': 'User', date: '22/03/2023 11:05' },
+        { 'claim type': 'Transport Type', date: '22/03/2023 11:05' },
+        { 'claim type': 'Ticket Dimension', date: '22/03/2023 11:05' },
+        { 'claim type': 'Supplier', date: '22/03/2023 11:05' },
+        { 'claim type': 'Recipe', date: '22/03/2023 11:05' },
+        { 'claim type': 'ProductionLine', date: '22/03/2023 11:05' },
+        { 'claim type': 'Shop', date: '22/03/2023 11:05' },
+        { 'claim type': 'Shop', date: '22/03/2023 11:05' },
+      ];
   return (
     <TableContainer component={Paper}>
       <Table
@@ -69,15 +86,3 @@ export default function ClaimTypesTable() {
     </TableContainer>
   );
 }
-
-const body = [
-  { 'claim type': 'VatType', date: '22/03/2023 11:05' },
-  { 'claim type': 'User', date: '22/03/2023 11:05' },
-  { 'claim type': 'Transport Type', date: '22/03/2023 11:05' },
-  { 'claim type': 'Ticket Dimension', date: '22/03/2023 11:05' },
-  { 'claim type': 'Supplier', date: '22/03/2023 11:05' },
-  { 'claim type': 'Recipe', date: '22/03/2023 11:05' },
-  { 'claim type': 'ProductionLine', date: '22/03/2023 11:05' },
-  { 'claim type': 'Shop', date: '22/03/2023 11:05' },
-  { 'claim type': 'Shop', date: '22/03/2023 11:05' },
-];

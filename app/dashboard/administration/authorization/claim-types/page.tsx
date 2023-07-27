@@ -30,7 +30,7 @@ const ClaimTypes = () => {
             sx={{ fontSize: 16, color: '#B6B6B6', cursor: 'pointer' }}
           />
         </Stack>
-        <Stack my={[3, 5, 8]} spacing={[1, 2]}>
+        <Stack my={[1, 2, 4]} spacing={[1, 2]}>
           <InputWithIcon
             icon={SimCardDownloadIcon}
             required

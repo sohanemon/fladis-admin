@@ -76,6 +76,43 @@ const data = [
         Icon: FiberManualRecordIcon,
         label: 'Configuration',
         slug: '/dashboard/administration/configuration',
+        nested: [
+          {
+            Icon: FiberManualRecordIcon,
+            label: 'Categories',
+            slug: '/dashboard/administration/configuration/categories',
+          },
+          {
+            Icon: FiberManualRecordIcon,
+            label: 'Gift Types',
+            slug: '/dashboard/administration/configuration/gift-types',
+          },
+          {
+            Icon: FiberManualRecordIcon,
+            label: 'Packaging Type',
+            slug: '/dashboard/administration/configuration/packaging-type',
+          },
+          {
+            Icon: FiberManualRecordIcon,
+            label: 'Document Type',
+            slug: '/dashboard/administration/configuration/document-type',
+          },
+          {
+            Icon: FiberManualRecordIcon,
+            label: 'Unit Type',
+            slug: '/dashboard/administration/configuration/unit-type',
+          },
+          {
+            Icon: FiberManualRecordIcon,
+            label: 'VAT Type',
+            slug: '/dashboard/administration/configuration/VAT-type',
+          },
+          {
+            Icon: FiberManualRecordIcon,
+            label: 'Countries',
+            slug: '/dashboard/administration/configuration/countries',
+          },
+        ],
       },
       {
         Icon: FiberManualRecordIcon,

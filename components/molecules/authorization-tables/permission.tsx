@@ -1,5 +1,5 @@
 'use client';
-import { Button, Typography } from '@mui/material';
+import Switch from '@/components/atoms/switch';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,9 +7,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Image from 'next/image';
-import Actions from '../actions';
-import { Switch } from '@mui/material';
 
 export default function PermissionTable() {
   return (
@@ -52,9 +49,11 @@ export default function PermissionTable() {
                 {(idx + 1).toLocaleString('en-us', { minimumIntegerDigits: 2 })}
               </TableCell>
               <TableCell sx={{ fontSize: 12 }}>{_.function}</TableCell>
-              <TableCell>
-                <Switch color='primary' />
-              </TableCell>
+              {Array.from(Array(4)).map((_) => (
+                <TableCell key={_}>
+                  <Switch />
+                </TableCell>
+              ))}
             </TableRow>
           ))}
         </TableBody>

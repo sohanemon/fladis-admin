@@ -101,9 +101,9 @@ function ListItem({
   return (
     <ListItemButton onClick={() => slug && push(slug)}>
       <ListItemIcon>
-        <Icon sx={{ fontSize: inner ? 13 : null }} />{' '}
+        <Icon sx={{ fontSize: inner ? 10 : null }} />{' '}
       </ListItemIcon>
-      <ListItemText primary={label} />
+      <ListItemText sx={{ '& *': { fontSize: 14 } }} primary={label} />
     </ListItemButton>
   );
 }
@@ -117,9 +117,9 @@ const NestedListItem = ({ label, inner, slug, Icon, nested }: ListType) => {
     <>
       <ListItemButton onClick={handleClick}>
         <ListItemIcon>
-          <Icon sx={{ fontSize: inner ? 13 : null }} />
+          <Icon sx={{ fontSize: inner ? 10 : null }} />
         </ListItemIcon>
-        <ListItemText primary={label} />
+        <ListItemText sx={{ '& *': { fontSize: 14 } }} primary={label} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout='auto' unmountOnExit sx={{ pl: 2 }}>

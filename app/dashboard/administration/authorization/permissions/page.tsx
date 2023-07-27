@@ -1,12 +1,8 @@
 'use client';
-import { FilledButton } from '@/components/atoms/Button';
-import { Box, Stack } from '@mui/material';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import Link from 'next/link';
-import React from 'react';
-import Image from 'next/image';
 import { FilledInput } from '@/components/atoms/Input';
 import PermissionTable from '@/components/molecules/authorization-tables/permission';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { Box, Stack } from '@mui/material';
 
 const Permissions = () => {
   return (

@@ -1,5 +1,5 @@
 'use client';
-import { FilledButton } from '@/components/atoms/Button';
+import { Button, FilledButton } from '@/components/atoms/Button';
 import { FilledInput, InputWithIcon } from '@/components/atoms/Input';
 import ClaimTypesTable from '@/components/molecules/authorization-tables/claim-type';
 import { useModalStore } from '@/zustand-store/Modal.store';
@@ -51,6 +51,14 @@ const ClaimTypes = () => {
             required
             label='Description'
           />
+        </Stack>{' '}
+        <Stack direction={'row'} justifyContent={'end'} mx={'auto'} gap='1rem'>
+          <Button sx={{ px: 4 }} color='info' variant='contained'>
+            Close
+          </Button>
+          <Button sx={{ px: 4 }} variant='contained'>
+            Save
+          </Button>
         </Stack>
       </>
     );

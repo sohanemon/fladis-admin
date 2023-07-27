@@ -1,19 +1,15 @@
 'use client';
-import { Box, Grid, Stack, Typography } from '@mui/material';
-import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual';
-import PersonIcon from '@mui/icons-material/Person';
-import EmailIcon from '@mui/icons-material/Email';
-import Image from 'next/image';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import { useRef } from 'react';
+import EmailIcon from '@mui/icons-material/Email';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import PersonIcon from '@mui/icons-material/Person';
+import { Box, Stack, Typography } from '@mui/material';
+import { Button } from '../atoms/Button';
 import { InputWithIcon } from '../atoms/Input';
 import { Select } from '../atoms/select';
-import { Button } from '../atoms/Button';
-import { Tabs } from './tabs';
+import { Uploader } from '../atoms/uploader';
 
 export default function AddUserForm({ edit }: { edit?: boolean }) {
-  const inputRef = useRef<HTMLInputElement>(null);
   return (
     <>
       <Box
@@ -38,33 +34,7 @@ export default function AddUserForm({ edit }: { edit?: boolean }) {
             </Typography>
           </>
         )}
-        <Box
-          onClick={() => inputRef.current?.click()}
-          sx={{
-            position: 'relative',
-            width: '108px',
-            marginInline: 'auto',
-            cursor: 'pointer',
-            aspectRatio: '1/1',
-            display: 'grid',
-            placeContent: 'center',
-            bgcolor: '#5E008420',
-            borderRadius: 999,
-            outline: '1px dashed #E2E2E2',
-            outlineOffset: 9,
-          }}
-        >
-          <PhotoSizeSelectActualIcon sx={{ filter: 'invert()' }} />
-          <Box sx={{ position: 'absolute', right: 0, bottom: -14 }}>
-            <Image
-              src={`/assets/images/user/add.svg`}
-              alt=''
-              width={21}
-              height={21}
-            />
-          </Box>
-          <input ref={inputRef} type='file' style={{ display: 'none' }} />
-        </Box>
+        <Uploader rounded />
         <Box
           display={'grid'}
           mx={'auto'}

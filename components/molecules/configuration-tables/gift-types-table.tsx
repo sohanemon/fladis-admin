@@ -1,3 +1,4 @@
+import { Button, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -5,28 +6,10 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Image from 'next/image';
 import Actions from '../actions';
 
-export default function ClaimTypesTable({ role }: { role?: boolean }) {
-  const body = role
-    ? [
-        { name: 'admin' },
-        { name: 'client' },
-        { name: 'deposit' },
-        { name: 'seller' },
-        { name: 'transporter' },
-      ]
-    : [
-        { 'claim type': 'VatType', date: '22/03/2023 11:05' },
-        { 'claim type': 'User', date: '22/03/2023 11:05' },
-        { 'claim type': 'Transport Type', date: '22/03/2023 11:05' },
-        { 'claim type': 'Ticket Dimension', date: '22/03/2023 11:05' },
-        { 'claim type': 'Supplier', date: '22/03/2023 11:05' },
-        { 'claim type': 'Recipe', date: '22/03/2023 11:05' },
-        { 'claim type': 'ProductionLine', date: '22/03/2023 11:05' },
-        { 'claim type': 'Shop', date: '22/03/2023 11:05' },
-        { 'claim type': 'Shop', date: '22/03/2023 11:05' },
-      ];
+export default function GiftTypesTable() {
   return (
     <TableContainer component={Paper}>
       <Table
@@ -47,40 +30,37 @@ export default function ClaimTypesTable({ role }: { role?: boolean }) {
             {Object.keys(body[0]).map((_) => (
               <TableCell
                 key={_}
+                align={_ === 'actions' ? 'center' : 'left'}
                 sx={{ textTransform: 'capitalize', fontSize: 12 }}
               >
                 {_}
               </TableCell>
             ))}
-            <TableCell
-              align='center'
-              sx={{ textTransform: 'capitalize', fontSize: 12 }}
-            >
-              Actions
-            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {body.map((_: Object | any, idx) => (
+          {body.map(({ name, actions, ...row }: Object | any, idx) => (
             <TableRow
-              key={_['claim type']}
+              key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell sx={{ fontSize: 12 }} component='th' scope='row'>
                 {(idx + 1).toLocaleString('en-us', { minimumIntegerDigits: 2 })}
               </TableCell>
-
-              {Object.keys(_).map((__: string | any) => (
-                <TableCell
-                  sx={{ fontSize: 12, textTransform: 'capitalize' }}
-                  key={_}
-                >
-                  {_[__]}
+              <TableCell
+                sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}
+              >
+                <Image src={name.img} alt='' width={35} height={35} />
+                <Typography fontSize={12}>{name.title}</Typography>
+              </TableCell>
+              {Object.keys(row).map((_: string | any) => (
+                <TableCell sx={{ fontSize: 12 }} key={_}>
+                  {row[_]}
                 </TableCell>
               ))}
 
               <TableCell align='center'>
-                <Actions isClaimType />
+                <Actions isGiftType />
               </TableCell>
             </TableRow>
           ))}
@@ -89,3 +69,22 @@ export default function ClaimTypesTable({ role }: { role?: boolean }) {
     </TableContainer>
   );
 }
+
+const body = [
+  {
+    name: {
+      img: '/assets/images/configuration/gift.png',
+      title: 'Happy Birthday',
+    },
+    message: '“Hope all your birthday wishes come true!”',
+    actions: '',
+  },
+  {
+    name: {
+      img: '/assets/images/configuration/gift.png',
+      title: 'Happy Birthday',
+    },
+    message: '“Hope all your birthday wishes come true!”',
+    actions: '',
+  },
+];

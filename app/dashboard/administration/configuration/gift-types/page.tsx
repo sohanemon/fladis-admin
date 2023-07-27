@@ -30,18 +30,6 @@ const GiftTypes = () => {
         <Stack direction={'row'} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
           <FilledButton
-            icon={
-              <Image
-                src={`/assets/images/filter.svg`}
-                alt=''
-                width={20}
-                height={20}
-              />
-            }
-          >
-            Filter
-          </FilledButton>
-          <FilledButton
             onClick={handleAdd}
             primary
             icon={<AddIcon sx={{ fontSize: 20 }} />}

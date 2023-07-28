@@ -13,6 +13,28 @@ export const Button = (props: ButtonProps) => {
   );
 };
 
+export const IndigoButton = (props: ButtonProps) => {
+  return (
+    <MuiButton
+      sx={[
+        {
+          height: 40,
+          color: '#5E0084',
+          fontSize: 10,
+          background: '#ECE7F5',
+          width: 'max-content',
+          px: 3,
+          display: 'block',
+          ml: 'auto',
+          borderRadius: '5px',
+        },
+        ...(Array.isArray(props.sx) ? props.sx : [props.sx]),
+      ]}
+      {...props}
+    />
+  );
+};
+
 export const FilledButton = ({
   icon,
   primary,

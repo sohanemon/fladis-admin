@@ -10,9 +10,13 @@ export default function SidebarContent({
   toggleDrawer: () => void;
 }) {
   return (
-    <Box minHeight={'100vh'}>
+    <Box height={'100vh'}>
       <Stack
+        position={'sticky'}
+        top={0}
+        bgcolor={'white'}
         direction={'row'}
+        zIndex={5}
         justifyContent={'space-between'}
         alignItems={'center'}
         p={1}

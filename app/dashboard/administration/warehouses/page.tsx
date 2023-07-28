@@ -15,11 +15,11 @@ const Warehouses = () => {
     <Box>
       <Stack direction={'row'} justifyContent={'space-between'}>
         <div className='heading'>
-          <h1>Stores</h1>
+          <h1>Warehouses</h1>
           <p>
             Administration
             <FiberManualRecordIcon sx={{ width: 6, fill: '#A5A5A5' }} />
-            <span>Stores</span>
+            <span>Warehouses</span>
           </p>
         </div>
         <Stack direction={'row'} gap={[1, 2]}>

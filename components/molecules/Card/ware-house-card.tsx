@@ -1,8 +1,7 @@
 'use client';
-import { Button } from '@/components/atoms/Button';
 import { Box, Stack, Typography } from '@mui/material';
-import Image from 'next/image';
 import Actions from '../actions';
+import { IndigoButton } from '@/components/atoms/Button';
 
 export default function WareHouseCard() {
   return (
@@ -47,20 +46,7 @@ export default function WareHouseCard() {
             borderTop: '0.1px #EBEBEB solid',
           }}
         />
-        <Button
-          sx={{
-            color: '#5E0084',
-            fontSize: 10,
-            background: '#ECE7F5',
-            width: 'max-content',
-            px: 3,
-            display: 'block',
-            ml: 'auto',
-            borderRadius: '5px',
-          }}
-        >
-          Details
-        </Button>
+        <IndigoButton>Details</IndigoButton>
       </Stack>
     </Box>
   );

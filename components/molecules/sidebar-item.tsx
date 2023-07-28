@@ -145,7 +145,7 @@ function ListItem({
   );
 }
 const NestedListItem = ({ label, inner, slug, Icon, nested }: ListType) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
   };

@@ -1,16 +1,19 @@
 'use client';
-import { Box } from '@mui/material';
-import React from 'react';
-import { Stack } from '@mui/material';
-import Image from 'next/image';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import AddIcon from '@mui/icons-material/Add';
-import Link from 'next/link';
-import { FilledInput } from '@/components/atoms/Input';
 import { FilledButton } from '@/components/atoms/Button';
-import StoreCard from '@/components/molecules/Card/store-card';
+import { FilledInput } from '@/components/atoms/Input';
+import { WareHouseModal } from '@/components/modals/warehouse-modal';
 import WareHouseCard from '@/components/molecules/Card/ware-house-card';
+import { useModalStore } from '@/zustand-store/Modal.store';
+import AddIcon from '@mui/icons-material/Add';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { Box, Stack } from '@mui/material';
+import Image from 'next/image';
 const Warehouses = () => {
+  const { setModalShow, setModalContent } = useModalStore();
+  function handleAdd() {
+    setModalShow(true);
+    setModalContent(<WareHouseModal setModalShow={setModalShow} />);
+  }
   return (
     <Box>
       <Stack direction={'row'} justifyContent={'space-between'}>
@@ -36,11 +39,12 @@ const Warehouses = () => {
           >
             Filter
           </FilledButton>
-          <Link href={'/dashboard/administration/stores/add-story'}>
-            <FilledButton primary icon={<AddIcon sx={{ fontSize: 20 }} />}>
-              Add
-            </FilledButton>
-          </Link>
+          <FilledButton
+            primary
+            icon={<AddIcon sx={{ fontSize: 20 }} onClick={handleAdd} />}
+          >
+            Add
+          </FilledButton>
         </Stack>
       </Stack>
       <Box display={'grid'} gridTemplateColumns={['1fr', '1fr 1fr']} gap={3}>

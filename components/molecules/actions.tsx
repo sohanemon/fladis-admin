@@ -8,15 +8,61 @@ import * as Popover from '@radix-ui/react-popover';
 export default function Actions({
   user,
   isGiftType,
+  isCustomerType,
   isClaimType,
 }: {
   user?: string;
   isClaimType?: boolean;
+  isCustomerType?: boolean;
   isGiftType?: boolean;
 }) {
   const { push } = useRouter();
 
   const data = useMemo(() => {
+    if (isCustomerType)
+      return [
+        {
+          icon: (
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='13'
+              height='13'
+              viewBox='0 0 13 13'
+              fill='none'
+            >
+              <g clip-path='url(#clip0_41_2468)'>
+                <path
+                  d='M12.942 6.19856C12.8674 6.01128 11.0598 1.625 6.49985 1.625C1.93989 1.625 0.132285 6.01128 0.0577383 6.19856C-0.0192461 6.39214 -0.0192461 6.60806 0.0577383 6.80164C0.132285 6.98872 1.93989 11.375 6.49985 11.375C11.0598 11.375 12.8674 6.98872 12.942 6.80144C13.0189 6.60786 13.0189 6.39214 12.942 6.19856ZM6.49985 8.125C5.60244 8.125 4.87485 7.39741 4.87485 6.5C4.87485 5.60259 5.60244 4.875 6.49985 4.875C7.39725 4.875 8.12485 5.60259 8.12485 6.5C8.12485 7.39741 7.39725 8.125 6.49985 8.125Z'
+                  fill='#CCCCCC'
+                />
+              </g>
+              <defs>
+                <clipPath id='clip0_41_2468'>
+                  <rect width='13' height='13' fill='white' />
+                </clipPath>
+              </defs>
+            </svg>
+          ),
+          label: 'Details',
+        },
+        {
+          icon: (
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='8'
+              height='11'
+              viewBox='0 0 8 11'
+              fill='none'
+            >
+              <path
+                d='M0.571429 9.77778C0.571429 10.45 1.08571 11 1.71429 11H6.28571C6.91429 11 7.42857 10.45 7.42857 9.77778V3.66667C7.42857 2.99444 6.91429 2.44444 6.28571 2.44444H1.71429C1.08571 2.44444 0.571429 2.99444 0.571429 3.66667V9.77778ZM7.42857 0.611111H6L5.59429 0.177222C5.49143 0.0672222 5.34286 0 5.19429 0H2.80571C2.65714 0 2.50857 0.0672222 2.40571 0.177222L2 0.611111H0.571429C0.257143 0.611111 0 0.886111 0 1.22222C0 1.55833 0.257143 1.83333 0.571429 1.83333H7.42857C7.74286 1.83333 8 1.55833 8 1.22222C8 0.886111 7.74286 0.611111 7.42857 0.611111Z'
+                fill='#CCCCCC'
+              />
+            </svg>
+          ),
+          label: 'Remove',
+        },
+      ];
     if (isClaimType)
       return [
         {

@@ -67,7 +67,7 @@ export default function CustomerTable() {
                 </LightButton>
               </TableCell>
               <TableCell align='center'>
-                <Actions user={name.title} />
+                <Actions isCustomerType user={name.title} />
               </TableCell>
             </TableRow>
           ))}

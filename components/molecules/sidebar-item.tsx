@@ -9,6 +9,7 @@ import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import RecentActorsIcon from '@mui/icons-material/RecentActors';
 import ListItemText from '@mui/material/ListItemText';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 import { usePathname, useRouter } from 'next/navigation';
@@ -130,7 +131,7 @@ const data = [
   },
   {
     label: 'Contacts',
-    Icon: AdminPanelSettingsIcon,
+    Icon: RecentActorsIcon,
     slug: '/dashboard/contacts',
     nested: [
       {
@@ -167,7 +168,7 @@ function ListItem({
       </ListItemIcon>
       <ListItemText
         sx={{
-          '& *': { fontSize: '14px' },
+          '& *': { fontSize: '14px !important' },
           color: path.includes(slug!) ? '#5E0084' : '#A5A5A5',
         }}
         primary={label}
@@ -195,7 +196,7 @@ const NestedListItem = ({ label, inner, slug, Icon, nested }: ListType) => {
         </ListItemIcon>
         <ListItemText
           sx={{
-            '& *': { fontSize: '14px' },
+            '& *': { fontSize: '14px !important' },
             color: path.includes(slug!) ? '#5E0084' : '#A5A5A5',
           }}
           primary={label}

@@ -1,13 +1,13 @@
 'use client';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import EmailIcon from '@mui/icons-material/Email';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PersonIcon from '@mui/icons-material/Person';
+import SavingsIcon from '@mui/icons-material/Savings';
+import ApartmentIcon from '@mui/icons-material/Apartment';
 import { Box, Stack, Typography } from '@mui/material';
 import { Button } from '../atoms/Button';
 import { InputWithIcon } from '../atoms/Input';
-import { Select } from '../atoms/select';
 import { Uploader } from '../atoms/uploader';
+import Switch from '../atoms/switch';
 
 export default function AddStoreForm({ edit }: { edit?: boolean }) {
   return (
@@ -39,6 +39,7 @@ export default function AddStoreForm({ edit }: { edit?: boolean }) {
           display={'grid'}
           mx={'auto'}
           maxWidth={['100%', '80%']}
+          alignItems={'center'}
           gridTemplateColumns={'1fr 1fr'}
           gap={[1, 4]}
           my={6}
@@ -46,6 +47,27 @@ export default function AddStoreForm({ edit }: { edit?: boolean }) {
           {inputFields.map((_) => (
             <InputWithIcon {..._} key={_.label} />
           ))}
+          <Typography
+            sx={{
+              fontSize: '14px',
+              fontWeight: 500,
+              gridColumn: 'span 2 /span 2',
+            }}
+          >
+            Store information
+          </Typography>{' '}
+          <InputWithIcon icon={ApartmentIcon} label={'Warehouses'} />
+          <Stack direction={'row'} alignItems={'center'} gap={1}>
+            <Typography
+              sx={{
+                color: '#A9AAAD',
+                fontSize: 12,
+              }}
+            >
+              Online Shop
+            </Typography>
+            <Switch />
+          </Stack>
         </Box>
         <Stack
           direction={'row'}
@@ -65,7 +87,7 @@ export default function AddStoreForm({ edit }: { edit?: boolean }) {
               </Button>
               <Button variant='contained'>Submit</Button>
             </>
-          )}
+          )}{' '}
         </Stack>
       </Box>
     </>
@@ -77,9 +99,10 @@ const inputFields = [
   { label: 'Formal Name', icon: PersonIcon },
   {
     label: 'VATnumber',
-    icon: CalendarMonthIcon,
+    icon: SavingsIcon,
   },
-  { label: 'Country', icon: LocalPhoneIcon },
-  { label: 'City', icon: EmailIcon },
-  { label: 'Postal Code', icon: LocalPhoneIcon, type: 'number' },
+  { label: 'Country', icon: LocationOnIcon },
+  { label: 'City', icon: LocationOnIcon },
+  { label: 'Postal Code', icon: LocationOnIcon, type: 'number' },
+  { label: 'Address', icon: LocationOnIcon, type: 'number' },
 ];

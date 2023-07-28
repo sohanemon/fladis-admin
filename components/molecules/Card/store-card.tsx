@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Actions from '../actions';
 
 export default function StoreCard() {
-  console.log(StoreCard.length);
   return (
     <Box
       px={3}

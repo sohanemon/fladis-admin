@@ -1,5 +1,5 @@
 'use client';
-import { Button, IndigoButton } from '@/components/atoms/Button';
+import { Button, LightButton } from '@/components/atoms/Button';
 import { Box, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import Actions from '../actions';
@@ -85,7 +85,7 @@ export default function StoreCard() {
             borderTop: '0.1px #EBEBEB solid',
           }}
         />
-        <IndigoButton>Details</IndigoButton>
+        <LightButton>Details</LightButton>
       </Stack>
     </Box>
   );

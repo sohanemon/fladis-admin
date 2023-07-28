@@ -1,7 +1,7 @@
 'use client';
+import { LightButton } from '@/components/atoms/Button';
 import { Box, Stack, Typography } from '@mui/material';
 import Actions from '../actions';
-import { IndigoButton } from '@/components/atoms/Button';
 
 export default function WareHouseCard() {
   return (
@@ -46,7 +46,7 @@ export default function WareHouseCard() {
             borderTop: '0.1px #EBEBEB solid',
           }}
         />
-        <IndigoButton>Details</IndigoButton>
+        <LightButton>Details</LightButton>
       </Stack>
     </Box>
   );

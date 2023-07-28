@@ -13,7 +13,7 @@ export const Button = (props: ButtonProps) => {
   );
 };
 
-export const IndigoButton = (props: ButtonProps) => {
+export const LightButton = (props: ButtonProps) => {
   return (
     <MuiButton
       sx={[

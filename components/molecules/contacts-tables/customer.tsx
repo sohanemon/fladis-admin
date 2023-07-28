@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Image from 'next/image';
 import Actions from '../actions';
+import { LightButton } from '@/components/atoms/Button';
 
 export default function CustomerTable() {
   return (
@@ -31,7 +32,7 @@ export default function CustomerTable() {
               <TableCell
                 key={_}
                 align={
-                  _ === 'status' ? 'center' : _ === 'actions' ? 'right' : 'left'
+                  _ === 'debt' ? 'center' : _ === 'actions' ? 'center' : 'left'
                 }
                 sx={{ textTransform: 'capitalize', fontSize: 12 }}
               >
@@ -41,7 +42,7 @@ export default function CustomerTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {body.map(({ name, status, debt, ...row }: Object | any, idx) => (
+          {body.map(({ name, actions, debt, ...row }: Object | any, idx) => (
             <TableRow
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -60,7 +61,11 @@ export default function CustomerTable() {
                   {row[_]}
                 </TableCell>
               ))}
-
+              <TableCell align='center'>
+                <LightButton sx={{ color: '#18ACFE', bgcolor: '#F1FAFF' }}>
+                  {debt}$
+                </LightButton>
+              </TableCell>
               <TableCell align='center'>
                 <Actions user={name.title} />
               </TableCell>
@@ -81,6 +86,16 @@ const body = [
     email: 'wadew@acme.com',
     store: '100 in 1',
     debt: 120,
+    actions: '',
+  },
+  {
+    name: { img: '/assets/images/user.png', title: 'Another' },
+    phone: '(671) 555-0110',
+    'Tax number': 25511,
+    Address: 'City, Postal code, Address1, Address2',
+    email: 'wadew@google.com',
+    store: '100 in 1',
+    debt: 320,
     actions: '',
   },
 ];

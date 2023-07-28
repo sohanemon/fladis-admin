@@ -1,11 +1,13 @@
 'use client';
+import ApartmentIcon from '@mui/icons-material/Apartment';
 import CloseIcon from '@mui/icons-material/Close';
-import { Stack } from '@mui/material';
-import { Uploader } from '../atoms/uploader';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PersonIcon from '@mui/icons-material/Person';
-import { InputWithIcon } from '../atoms/Input';
-import CreateIcon from '@mui/icons-material/Create';
+import SavingsIcon from '@mui/icons-material/Savings';
+import { Box, Stack, Typography } from '@mui/material';
 import { Button } from '../atoms/Button';
+import { InputWithIcon } from '../atoms/Input';
+import Switch from '../atoms/switch';
 
 export function WareHouseModal({
   setModalShow,
@@ -17,57 +19,39 @@ export function WareHouseModal({
   return (
     <>
       <Stack justifyContent={'space-between'} direction={'row'}>
-        <div>
-          <h3
-            style={{
-              color: '#333D49',
-              fontSize: 14,
-            }}
-          >
-            {edit ? 'Edit' : 'Add'} Gift Type
-          </h3>
-          <p
-            style={{
-              color: '#A5A5A5',
-              fontSize: 12,
-            }}
-          >
-            Image
-          </p>
-        </div>
+        <h3
+          style={{
+            fontWeight: '500',
+          }}
+        >
+          {edit ? 'Edit' : 'Add'} Warehouses
+        </h3>
         <CloseIcon
           onClick={() => setModalShow!(false)}
           sx={{ fontSize: 16, color: '#B6B6B6', cursor: 'pointer' }}
         />
       </Stack>
-      <Uploader sx={{ mb: 2 }} />
-      <p
-        style={{
-          textAlign: 'center',
-          color: '#CBCBCB',
-          fontSize: 10,
-        }}
+      <Box
+        display={'grid'}
+        mx={'auto'}
+        alignItems={'center'}
+        gridTemplateColumns={'1fr 1fr'}
+        gap={[1, 2]}
+        my={6}
       >
-        Allowed file types: png, jpg, jpeg.
-      </p>
-      <Stack my={[1, 2, 4]} spacing={[1, 2]}>
-        <InputWithIcon icon={PersonIcon} required label='Name' />
-        <InputWithIcon
-          multiline
-          sx={{
-            '& .MuiInputBase-root': {
-              alignItems: 'start',
-            },
-            '& .MuiSvgIcon-root': {
-              mt: 3,
-            },
-          }}
-          rows={5}
-          icon={CreateIcon}
-          required
-          label='Description'
-        />
-      </Stack>{' '}
+        {inputFields.map((_) => (
+          <InputWithIcon
+            sx={{
+              ':last-child': {
+                gridColumn: 'span 2/span 2',
+              },
+            }}
+            size='small'
+            {..._}
+            key={_.label}
+          />
+        ))}
+      </Box>
       <Stack direction={'row'} justifyContent={'end'} mx={'auto'} gap='1rem'>
         <Button sx={{ px: 4 }} color='info' variant='contained'>
           Close
@@ -79,3 +63,11 @@ export function WareHouseModal({
     </>
   );
 }
+
+const inputFields = [
+  { label: 'Name', icon: PersonIcon },
+  { label: 'Country', icon: LocationOnIcon },
+  { label: 'City', icon: LocationOnIcon },
+  { label: 'Postal Code', icon: LocationOnIcon, type: 'number' },
+  { label: 'Address', icon: LocationOnIcon, type: 'number' },
+];

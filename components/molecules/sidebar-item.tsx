@@ -1,9 +1,9 @@
+'use client';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import LayersIcon from '@mui/icons-material/Layers';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import { SvgIconTypeMap } from '@mui/material';
 import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
@@ -11,7 +11,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 interface ListType {
@@ -45,6 +45,7 @@ const data = [
   {
     label: 'Administration',
     Icon: AdminPanelSettingsIcon,
+    slug: '/dashboard/administration',
     nested: [
       {
         Icon: FiberManualRecordIcon,
@@ -54,6 +55,7 @@ const data = [
       {
         Icon: FiberManualRecordIcon,
         label: 'Authorization',
+        slug: '/dashboard/administration/authorization',
         nested: [
           {
             Icon: FiberManualRecordIcon,
@@ -126,6 +128,23 @@ const data = [
       },
     ],
   },
+  {
+    label: 'Contacts',
+    Icon: AdminPanelSettingsIcon,
+    slug: '/dashboard/contacts',
+    nested: [
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Customers',
+        slug: '/dashboard/contacts/customers',
+      },
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Suppliers',
+        slug: '/dashboard/contacts/suppliers',
+      },
+    ],
+  },
 ];
 
 function ListItem({
@@ -135,17 +154,30 @@ function ListItem({
   inner,
 }: ListType & { inner?: boolean }) {
   const { push } = useRouter();
+  const path = usePathname();
   return (
     <ListItemButton onClick={() => slug && push(slug)}>
       <ListItemIcon>
-        <Icon sx={{ fontSize: inner ? 10 : null }} />{' '}
+        <Icon
+          sx={{
+            fontSize: inner ? 10 : null,
+            color: path.includes(slug!) ? '#5E0084' : '#A5A5A5',
+          }}
+        />{' '}
       </ListItemIcon>
-      <ListItemText sx={{ '& *': { fontSize: 14 } }} primary={label} />
+      <ListItemText
+        sx={{
+          '& *': { fontSize: '14px' },
+          color: path.includes(slug!) ? '#5E0084' : '#A5A5A5',
+        }}
+        primary={label}
+      />
     </ListItemButton>
   );
 }
 const NestedListItem = ({ label, inner, slug, Icon, nested }: ListType) => {
   const [open, setOpen] = useState(false);
+  const path = usePathname();
   const handleClick = () => {
     setOpen(!open);
   };
@@ -154,9 +186,20 @@ const NestedListItem = ({ label, inner, slug, Icon, nested }: ListType) => {
     <>
       <ListItemButton onClick={handleClick}>
         <ListItemIcon>
-          <Icon sx={{ fontSize: inner ? 10 : null }} />
+          <Icon
+            sx={{
+              fontSize: inner ? 10 : null,
+              color: path.includes(slug!) ? '#5E0084' : '#A5A5A5',
+            }}
+          />
         </ListItemIcon>
-        <ListItemText sx={{ '& *': { fontSize: 14 } }} primary={label} />
+        <ListItemText
+          sx={{
+            '& *': { fontSize: '14px' },
+            color: path.includes(slug!) ? '#5E0084' : '#A5A5A5',
+          }}
+          primary={label}
+        />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout='auto' unmountOnExit sx={{ pl: 2 }}>

@@ -3,11 +3,12 @@ import { Button } from '@/components/atoms/Button';
 import { InputWithIcon } from '@/components/atoms/Input';
 import { Select } from '@/components/atoms/select';
 import { Uploader } from '@/components/atoms/uploader';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PersonIcon from '@mui/icons-material/Person';
 import { Box, Stack, Typography } from '@mui/material';
+import Switch from '../atoms/switch';
+import GTranslateIcon from '@mui/icons-material/GTranslate';
 
 export default function AddCustomerForm({ edit }: { edit?: boolean }) {
   return (
@@ -35,9 +36,7 @@ export default function AddCustomerForm({ edit }: { edit?: boolean }) {
           </>
         )}
         <Uploader rounded />
-        <div className='text-gray-700 text-xs font-medium leading-none'>
-          Is Business
-        </div>
+
         <Box
           display={'grid'}
           mx={'auto'}
@@ -46,11 +45,46 @@ export default function AddCustomerForm({ edit }: { edit?: boolean }) {
           gap={[1, 4]}
           my={6}
         >
+          <Typography
+            sx={{
+              color: '#333D49',
+              fontSize: 12,
+              fontWeight: '500',
+              gridColumn: 'span 2/span 2',
+            }}
+          >
+            Is Business <Switch />
+          </Typography>
           {isBusiness.map((_) => (
             <InputWithIcon {..._} key={_.label} />
           ))}
-          <Select label='Gender' />
-          <Select label='Role' />
+          <Typography
+            sx={{
+              color: '#333D49',
+              fontSize: 12,
+              fontWeight: '500',
+              mb: -2,
+              gridColumn: 'span 2/span 2',
+            }}
+          >
+            Address
+          </Typography>
+          {address.map((_) => (
+            <InputWithIcon {..._} key={_.label} />
+          ))}
+          <Typography
+            sx={{
+              color: '#333D49',
+              fontSize: 12,
+              fontWeight: '500',
+              mb: -2,
+              gridColumn: 'span 2/span 2',
+            }}
+          >
+            Language
+          </Typography>
+
+          <InputWithIcon label={'Language'} icon={GTranslateIcon} />
         </Box>
         <Stack
           direction={'row'}
@@ -86,4 +120,12 @@ const isBusiness = [
     type: 'number',
   },
   { label: 'Phone Number', icon: LocalPhoneIcon, type: 'number' },
+];
+
+const address = [
+  { label: 'Country', icon: LocationOnIcon },
+  { label: 'City', icon: LocationOnIcon },
+  { label: 'Postal Code', icon: LocationOnIcon },
+  { label: 'Address Line 1', icon: LocationOnIcon },
+  { label: 'Address Line 2', icon: LocationOnIcon },
 ];

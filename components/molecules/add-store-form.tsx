@@ -1,13 +1,13 @@
 'use client';
+import ApartmentIcon from '@mui/icons-material/Apartment';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PersonIcon from '@mui/icons-material/Person';
 import SavingsIcon from '@mui/icons-material/Savings';
-import ApartmentIcon from '@mui/icons-material/Apartment';
 import { Box, Stack, Typography } from '@mui/material';
 import { Button } from '../atoms/Button';
 import { InputWithIcon } from '../atoms/Input';
-import { Uploader } from '../atoms/uploader';
 import Switch from '../atoms/switch';
+import { Uploader } from '../atoms/uploader';
 
 export default function AddStoreForm({ edit }: { edit?: boolean }) {
   return (
@@ -41,7 +41,7 @@ export default function AddStoreForm({ edit }: { edit?: boolean }) {
           maxWidth={['100%', '80%']}
           alignItems={'center'}
           gridTemplateColumns={'1fr 1fr'}
-          gap={[1, 4]}
+          gap={[1, 2]}
           my={6}
         >
           {inputFields.map((_) => (

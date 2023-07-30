@@ -40,7 +40,7 @@ export default function AddUserForm({ edit }: { edit?: boolean }) {
           mx={'auto'}
           maxWidth={['100%', '80%']}
           gridTemplateColumns={'1fr 1fr'}
-          gap={[1, 4]}
+          gap={[1, 2]}
           my={6}
         >
           {inputFields.map((_) => (

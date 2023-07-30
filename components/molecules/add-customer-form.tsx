@@ -1,14 +1,13 @@
 'use client';
 import { Button } from '@/components/atoms/Button';
 import { InputWithIcon } from '@/components/atoms/Input';
-import { Select } from '@/components/atoms/select';
 import { Uploader } from '@/components/atoms/uploader';
+import GTranslateIcon from '@mui/icons-material/GTranslate';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PersonIcon from '@mui/icons-material/Person';
 import { Box, Stack, Typography } from '@mui/material';
 import Switch from '../atoms/switch';
-import GTranslateIcon from '@mui/icons-material/GTranslate';
 
 export default function AddCustomerForm({ edit }: { edit?: boolean }) {
   return (
@@ -42,7 +41,7 @@ export default function AddCustomerForm({ edit }: { edit?: boolean }) {
           mx={'auto'}
           maxWidth={['100%', '80%']}
           gridTemplateColumns={'1fr 1fr'}
-          gap={[1, 4]}
+          gap={[1, 2]}
           my={6}
         >
           <Typography
@@ -63,7 +62,6 @@ export default function AddCustomerForm({ edit }: { edit?: boolean }) {
               color: '#333D49',
               fontSize: 12,
               fontWeight: '500',
-              mb: -2,
               gridColumn: 'span 2/span 2',
             }}
           >
@@ -77,7 +75,6 @@ export default function AddCustomerForm({ edit }: { edit?: boolean }) {
               color: '#333D49',
               fontSize: 12,
               fontWeight: '500',
-              mb: -2,
               gridColumn: 'span 2/span 2',
             }}
           >

@@ -35,6 +35,9 @@ export default function AddCustomerForm({ edit }: { edit?: boolean }) {
           </>
         )}
         <Uploader rounded />
+        <div className='text-gray-700 text-xs font-medium leading-none'>
+          Is Business
+        </div>
         <Box
           display={'grid'}
           mx={'auto'}
@@ -43,7 +46,7 @@ export default function AddCustomerForm({ edit }: { edit?: boolean }) {
           gap={[1, 4]}
           my={6}
         >
-          {inputFields.map((_) => (
+          {isBusiness.map((_) => (
             <InputWithIcon {..._} key={_.label} />
           ))}
           <Select label='Gender' />
@@ -74,14 +77,13 @@ export default function AddCustomerForm({ edit }: { edit?: boolean }) {
   );
 }
 
-const inputFields = [
-  { label: 'First Name', icon: PersonIcon },
-  { label: 'Last Name', icon: PersonIcon },
+const isBusiness = [
+  { label: 'Name', icon: PersonIcon },
+  { label: 'Store', icon: PersonIcon },
   {
-    label: 'Birthdate',
-    icon: CalendarMonthIcon,
-    // type: 'date'
+    label: 'Tax Number',
+    icon: LocalPhoneIcon,
+    type: 'number',
   },
-  { label: 'Phone', icon: LocalPhoneIcon, type: 'number' },
-  { label: 'Email', icon: EmailIcon, type: 'email' },
+  { label: 'Phone Number', icon: LocalPhoneIcon, type: 'number' },
 ];

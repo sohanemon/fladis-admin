@@ -3,6 +3,7 @@ import { Navbar } from '@/components/molecules/navbar';
 import NavbarContent from '@/components/molecules/navbar-content';
 import { Sidebar } from '@/components/molecules/sidebar';
 import SidebarContent from '@/components/molecules/sidebar-content';
+import useSidebarStore from '@/zustand-store/sidebar.store';
 import { Toolbar } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
@@ -12,17 +13,17 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [open, setOpen] = useState(true);
+  const { expanded, setExpanded } = useSidebarStore();
   const toggleDrawer = () => {
-    setOpen(!open);
+    setExpanded(!expanded);
   };
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <Navbar position='absolute' open={open}>
-        <NavbarContent open={open} toggleDrawer={toggleDrawer} />
+      <Navbar position='absolute' open={expanded}>
+        <NavbarContent open={expanded} toggleDrawer={toggleDrawer} />
       </Navbar>
-      <Sidebar variant='permanent' open={open}>
+      <Sidebar variant='permanent' open={expanded}>
         <SidebarContent toggleDrawer={toggleDrawer} />
       </Sidebar>
       <Box

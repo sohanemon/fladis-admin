@@ -1,4 +1,5 @@
 'use client';
+import useSidebarStore from '@/zustand-store/sidebar.store';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -195,9 +196,12 @@ function ListItem({
 }: ListType & { inner?: boolean }) {
   const { push } = useRouter();
   const path = usePathname();
+  const expanded = useSidebarStore((s) => s.expanded);
   return (
     <ListItemButton
-      sx={{ '& .MuiListItemIcon-root': { minWidth: '40px' } }}
+      sx={{
+        '& .MuiListItemIcon-root': { minWidth: expanded ? '40px' : '56px' },
+      }}
       onClick={() => slug && push(slug)}
     >
       <ListItemIcon>
@@ -220,6 +224,7 @@ function ListItem({
 }
 const NestedListItem = ({ label, inner, slug, Icon, nested }: ListType) => {
   const [open, setOpen] = useState(false);
+  const expanded = useSidebarStore((s) => s.expanded);
   const path = usePathname();
   const handleClick = () => {
     setOpen(!open);
@@ -228,7 +233,9 @@ const NestedListItem = ({ label, inner, slug, Icon, nested }: ListType) => {
   return (
     <>
       <ListItemButton
-        sx={{ '& .MuiListItemIcon-root': { minWidth: '40px' } }}
+        sx={{
+          '& .MuiListItemIcon-root': { minWidth: expanded ? '40px' : '56px' },
+        }}
         onClick={handleClick}
       >
         <ListItemIcon>

@@ -7,6 +7,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { TextFields as MuiInput } from '@mui/icons-material';
 import Image from 'next/image';
 import { useRef } from 'react';
@@ -88,7 +89,22 @@ export default function SupplyTable({ edit }: { edit?: boolean }) {
                 </TableCell>
               ))}
               <TableCell align='center'>
-                <Actions isGiftType />
+                {edit ? (
+                  <Box
+                    sx={{
+                      height: '100%',
+                      background: 'rgba(221, 49, 7, 0.05)',
+                      borderRadius: '5px',
+                    }}
+                    role='button'
+                  >
+                    <DeleteIcon
+                      sx={{ fontSize: '30px', p: '6px', fill: '#DD3107' }}
+                    />
+                  </Box>
+                ) : (
+                  <Actions isGiftType />
+                )}
               </TableCell>
             </TableRow>
           ))}

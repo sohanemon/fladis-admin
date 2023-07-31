@@ -1,4 +1,5 @@
 'use client';
+import { Box } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,8 +8,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Actions from '../actions';
-import { LightButton } from '@/components/atoms/Button';
-import { Box } from '@mui/material';
 
 export default function OrdersTable() {
   return (
@@ -68,7 +67,7 @@ export default function OrdersTable() {
                 </Box>
               </TableCell>
               <TableCell align='center'>
-                <Actions isGiftType />
+                <Actions edit_remove />
               </TableCell>
             </TableRow>
           ))}

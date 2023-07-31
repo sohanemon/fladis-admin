@@ -1,9 +1,9 @@
 'use client';
 import { Button, LightButton } from '@/components/atoms/Button';
+import { Ruler } from '@/components/atoms/Ruler';
 import { Box, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import Actions from '../actions';
-import { Ruler } from '@/components/atoms/Ruler';
 
 export default function StoreCard() {
   return (
@@ -37,7 +37,7 @@ export default function StoreCard() {
         >
           The candy King
         </Typography>
-        <Actions isClaimType />
+        <Actions deleteOnly />
       </Stack>
       <Stack gap={1} py={2}>
         {data.map((_) => (

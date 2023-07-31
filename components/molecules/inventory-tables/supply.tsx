@@ -1,5 +1,6 @@
 'use client';
 import { Input } from '@/components/atoms/Input';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { Box, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,8 +8,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { TextFields as MuiInput } from '@mui/icons-material';
 import Image from 'next/image';
 import { useRef } from 'react';
 import Actions from '../actions';
@@ -103,7 +102,7 @@ export default function SupplyTable({ edit }: { edit?: boolean }) {
                     />
                   </Box>
                 ) : (
-                  <Actions isGiftType />
+                  <Actions edit_remove />
                 )}
               </TableCell>
             </TableRow>

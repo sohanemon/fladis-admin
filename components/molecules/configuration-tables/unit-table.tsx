@@ -52,7 +52,7 @@ export default function UnitTable() {
                 <Switch />
               </TableCell>
               <TableCell align='center'>
-                <Actions isGiftType />
+                <Actions edit_remove />
               </TableCell>
             </TableRow>
           ))}

@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -60,7 +60,7 @@ export default function GiftTypesTable() {
               ))}
 
               <TableCell align='center'>
-                <Actions isGiftType />
+                <Actions edit_remove />
               </TableCell>
             </TableRow>
           ))}

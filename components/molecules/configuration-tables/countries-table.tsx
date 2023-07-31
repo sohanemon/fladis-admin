@@ -1,5 +1,4 @@
 'use client';
-import Switch from '@/components/atoms/switch';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -52,7 +51,7 @@ export default function CountryTable() {
               <TableCell sx={{ fontSize: 12 }}>{_.IsEu}</TableCell>
 
               <TableCell align='center'>
-                <Actions isGiftType />
+                <Actions edit_remove />
               </TableCell>
             </TableRow>
           ))}

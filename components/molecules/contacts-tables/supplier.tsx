@@ -75,7 +75,7 @@ export default function SupplierTable() {
               ))}
 
               <TableCell align='center'>
-                <Actions isCustomerType user={name.title} />
+                <Actions detail_remove user={name.title} />
               </TableCell>
             </TableRow>
           ))}

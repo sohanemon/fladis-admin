@@ -12,39 +12,40 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function Actions({
   user,
-  isGiftType,
-  isCustomerType,
+  edit_remove,
+  detail_remove,
   isSupplies,
-  isClaimType,
+  deleteOnly,
 }: {
   user?: string;
-  isClaimType?: boolean;
-  isCustomerType?: boolean;
+  deleteOnly?: boolean;
+  detail_remove?: boolean;
   isSupplies?: boolean;
-  isGiftType?: boolean;
+  edit_remove?: boolean;
 }) {
   const { push } = useRouter();
 
   const data = useMemo(() => {
-    if (isCustomerType)
+    if (detail_remove)
       return [
         {
           icon: <VisibilityIcon sx={{ fill: '#CCCCCC' }} />,
           label: 'Details',
+          action: isSupplies ? () => push('/') : null,
         },
         {
           icon: <DeleteIcon sx={{ fill: '#CCCCCC' }} />,
           label: 'Remove',
         },
       ];
-    if (isClaimType)
+    if (deleteOnly)
       return [
         {
           icon: <DeleteIcon sx={{ fill: '#CCCCCC' }} />,
           label: 'Delete',
         },
       ];
-    if (isGiftType)
+    if (edit_remove)
       return [
         {
           icon: <BorderColorIcon sx={{ fill: '#CCCCCC' }} />,
@@ -85,7 +86,7 @@ export default function Actions({
         label: 'Remove',
       },
     ];
-  }, [isClaimType, isCustomerType, isGiftType, push, user]);
+  }, [deleteOnly, detail_remove, edit_remove, isSupplies, push, user]);
 
   return (
     <Popover.Root>
@@ -99,7 +100,7 @@ export default function Actions({
       <Popover.Portal>
         <Popover.Content className='action-content'>
           {data.map((_) => (
-            <div key={_.label} onClick={_.action}>
+            <div key={_.label} onClick={_.action!}>
               {_.icon} <p>{_.label}</p>
             </div>
           ))}

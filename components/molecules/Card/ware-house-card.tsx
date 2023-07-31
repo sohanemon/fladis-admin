@@ -25,7 +25,7 @@ export default function WareHouseCard() {
         >
           The candy King
         </Typography>
-        <Actions isClaimType />
+        <Actions deleteOnly />
       </Stack>
       <Stack gap={1} py={2}>
         <div

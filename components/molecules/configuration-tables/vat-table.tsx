@@ -53,7 +53,7 @@ export default function VatTable() {
                 <Switch />
               </TableCell>
               <TableCell align='center'>
-                <Actions isGiftType />
+                <Actions edit_remove />
               </TableCell>
             </TableRow>
           ))}

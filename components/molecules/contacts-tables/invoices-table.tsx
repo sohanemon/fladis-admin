@@ -54,7 +54,7 @@ export default function InvoicesTable() {
               ))}
 
               <TableCell align='center'>
-                <Actions isGiftType />
+                <Actions edit_remove />
               </TableCell>
             </TableRow>
           ))}

@@ -80,7 +80,7 @@ export default function ClaimTypesTable({ role }: { role?: boolean }) {
               ))}
 
               <TableCell align='center'>
-                <Actions isClaimType />
+                <Actions deleteOnly />
               </TableCell>
             </TableRow>
           ))}

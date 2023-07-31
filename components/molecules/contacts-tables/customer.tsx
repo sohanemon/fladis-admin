@@ -9,8 +9,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Image from 'next/image';
-import Actions from '../actions';
 import { useRouter } from 'next/navigation';
+import Actions from '../actions';
 
 export default function CustomerTable() {
   const { push } = useRouter();
@@ -72,7 +72,7 @@ export default function CustomerTable() {
                 </LightButton>
               </TableCell>
               <TableCell align='center'>
-                <Actions isCustomerType user={name.title} />
+                <Actions detail_remove user={name.title} />
               </TableCell>
             </TableRow>
           ))}

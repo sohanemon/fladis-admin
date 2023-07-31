@@ -9,8 +9,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useMemo } from 'react';
 import Actions from '../actions';
-import { useEffect, useMemo } from 'react';
 
 interface Row {
   supplier?: string;
@@ -120,7 +120,7 @@ export default function SuppliesTable({ inventory }: { inventory?: boolean }) {
               <TableCell sx={{ fontSize: 12 }}></TableCell>
 
               <TableCell align='center'>
-                <Actions isCustomerType user={warehouse.title} />
+                <Actions detail_remove user={warehouse.title} />
               </TableCell>
             </TableRow>
           ))}

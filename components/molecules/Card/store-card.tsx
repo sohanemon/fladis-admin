@@ -3,6 +3,7 @@ import { Button, LightButton } from '@/components/atoms/Button';
 import { Box, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import Actions from '../actions';
+import { Ruler } from '@/components/atoms/Ruler';
 
 export default function StoreCard() {
   return (
@@ -80,11 +81,7 @@ export default function StoreCard() {
             Online Shop
           </Button>
         </Box>
-        <hr
-          style={{
-            borderTop: '0.1px #EBEBEB solid',
-          }}
-        />
+        <Ruler></Ruler>
         <LightButton>Details</LightButton>
       </Stack>
     </Box>

@@ -1,3 +1,5 @@
+import { LightButton } from '@/components/atoms/Button';
+import { Ruler } from '@/components/atoms/Ruler';
 import { Box, Stack, Typography } from '@mui/material';
 
 export default function AddressCard() {
@@ -15,10 +17,24 @@ export default function AddressCard() {
           sx={{
             fontSize: 14,
             fontWeight: '500',
+            mb: 1,
           }}
         >
           Full Name
         </Typography>
+        <Typography
+          sx={{
+            fontSize: 12,
+          }}
+        >
+          Contact Type
+          <br />
+          Email
+          <br />
+          Phone Number
+        </Typography>
+        <Ruler style={{ marginBlock: 16 }} />
+        <LightButton>Details</LightButton>
       </Stack>
     </Box>
   );

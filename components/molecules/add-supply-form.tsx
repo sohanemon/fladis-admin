@@ -6,6 +6,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PersonIcon from '@mui/icons-material/Person';
 import { Box, Stack } from '@mui/material';
 import { Select } from '../atoms/select';
+import SupplyTable from './inventory-tables/supply';
+import { Ruler } from '../atoms/Ruler';
 
 export default function AddSupplyForm({ edit }: { edit?: boolean }) {
   return (
@@ -36,6 +38,9 @@ export default function AddSupplyForm({ edit }: { edit?: boolean }) {
             rows={4}
           />
         </Box>
+        <SupplyTable edit />
+        <br />
+        <br />
         <Stack
           direction={'row'}
           borderTop={'1px solid #C3C3C520'}
@@ -43,7 +48,6 @@ export default function AddSupplyForm({ edit }: { edit?: boolean }) {
           justifyContent={'end'}
           mx={'auto'}
           gap='1rem'
-          maxWidth={['100%', '80%']}
         >
           {edit ? (
             <Button variant='contained'>Save Changes</Button>

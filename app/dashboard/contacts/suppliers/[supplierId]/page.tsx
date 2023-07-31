@@ -1,11 +1,5 @@
-import React from "react";
+import { redirect } from 'next/navigation';
 
-const Supplier = () => {
-  return (
-    <div>
-      <p>Supplier</p>
-    </div>
-  );
-};
-
-export default Supplier;
+export default function Suppliers() {
+  redirect('/dashboard/contacts/suppliers/123/edit');
+}

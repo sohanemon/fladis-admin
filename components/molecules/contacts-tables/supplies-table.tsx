@@ -94,7 +94,9 @@ export default function SuppliesTable({ inventory }: { inventory?: boolean }) {
         <TableBody>
           {body.map(({ warehouse, actions, ...row }: Object | any, idx) => (
             <TableRow
-              onClick={() => push('/dashboard/contacts/suppliers/123')}
+              onClick={() =>
+                !inventory && push('/dashboard/contacts/suppliers/123')
+              }
               key={row.name}
               title='View Details'
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -120,7 +122,7 @@ export default function SuppliesTable({ inventory }: { inventory?: boolean }) {
               <TableCell sx={{ fontSize: 12 }}></TableCell>
 
               <TableCell align='center'>
-                <Actions detail_remove user={warehouse.title} />
+                <Actions detail_remove isSupplies user={warehouse.title} />
               </TableCell>
             </TableRow>
           ))}

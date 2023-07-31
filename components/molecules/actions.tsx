@@ -31,7 +31,9 @@ export default function Actions({
         {
           icon: <VisibilityIcon sx={{ fill: '#CCCCCC' }} />,
           label: 'Details',
-          action: isSupplies ? () => push('/') : null,
+          action: isSupplies
+            ? () => push('/dashboard/inventory-and-products/supplies/123')
+            : null,
         },
         {
           icon: <DeleteIcon sx={{ fill: '#CCCCCC' }} />,

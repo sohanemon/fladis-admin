@@ -4,12 +4,13 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import LayersIcon from '@mui/icons-material/Layers';
+import RecentActorsIcon from '@mui/icons-material/RecentActors';
+import WidgetsIcon from '@mui/icons-material/Widgets';
 import { SvgIconTypeMap } from '@mui/material';
 import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import RecentActorsIcon from '@mui/icons-material/RecentActors';
 import ListItemText from '@mui/material/ListItemText';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 import { usePathname, useRouter } from 'next/navigation';
@@ -143,6 +144,44 @@ const data = [
         Icon: FiberManualRecordIcon,
         label: 'Suppliers',
         slug: '/dashboard/contacts/suppliers',
+      },
+    ],
+  },
+  {
+    label: 'Inventory',
+    Icon: WidgetsIcon,
+    slug: '/dashboard/inventory-and-products',
+    nested: [
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Products',
+        slug: '/dashboard/inventory-and-products/products',
+      },
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Supplies',
+        slug: '/dashboard/inventory-and-products/supplies',
+      },
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Stock',
+        slug: '/dashboard/inventory-and-products/stock',
+      },
+
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Production & Transfor...',
+        slug: '/dashboard/inventory-and-products/production-and-transformation',
+      },
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Coupons',
+        slug: '/dashboard/inventory-and-products/coupons',
+      },
+      {
+        Icon: FiberManualRecordIcon,
+        label: 'Gift cards',
+        slug: '/dashboard/inventory-and-products/gift-cards',
       },
     ],
   },

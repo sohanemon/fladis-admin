@@ -34,7 +34,7 @@ const Supplies = () => {
           >
             Filter
           </FilledButton>
-          <Link href={'/dashboard/contacts/suppliers/add-supplier'}>
+          <Link href={'/dashboard/inventory-and-products/supplies/add-supply'}>
             <FilledButton primary icon={<AddIcon sx={{ fontSize: 20 }} />}>
               Add
             </FilledButton>

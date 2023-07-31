@@ -71,6 +71,18 @@ export function InputWithIcon({
   );
 }
 
+export function Input({ size = 'small', ...props }: TextFieldProps) {
+  return (
+    <TextField
+      {...props}
+      fullWidth
+      type={props.type}
+      size={size}
+      variant='outlined'
+    />
+  );
+}
+
 import { HtmlHTMLAttributes, forwardRef } from 'react';
 
 interface FilledInputProps extends HtmlHTMLAttributes<HTMLInputElement> {}

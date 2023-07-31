@@ -18,6 +18,8 @@ const Tabs = forwardRef<BoxProps, TabsProps>(({ tabs, ...props }, ref) => {
         {
           borderRadius: '5px',
           display: 'flex',
+          width: '100%',
+          overflow: 'auto',
           px: '21px',
           mb: 3,
           gap: 4,
@@ -37,6 +39,7 @@ const Tabs = forwardRef<BoxProps, TabsProps>(({ tabs, ...props }, ref) => {
             paddingBottom: '6px',
             fontWeight: 500,
             textTransform: 'capitalize',
+            whiteSpace: 'nowrap',
             borderBottom: '4px solid',
             borderColor: path.includes(_.link!) ? '#5E0084' : 'transparent',
           }}

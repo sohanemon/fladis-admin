@@ -11,6 +11,7 @@ const LoginForgotPasswordLayout = ({ children }: { children: ReactNode }) => {
           src={`/assets/images/login-bg.svg`}
           alt='login-bg'
           width={500}
+          className='bg-image'
           height={1024}
         />
         <Brand className='brand' />

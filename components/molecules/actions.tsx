@@ -233,11 +233,15 @@ export default function Actions({
         label: 'Remove',
       },
     ];
-  }, [isClaimType, isGiftType, push, user]);
+  }, [isClaimType, isCustomerType, isGiftType, push, user]);
 
   return (
     <Popover.Root>
-      <Popover.Trigger className='action-trigger' asChild>
+      <Popover.Trigger
+        onClick={(e) => e.stopPropagation()}
+        className='action-trigger'
+        asChild
+      >
         <MoreHorizIcon />
       </Popover.Trigger>
       <Popover.Portal>

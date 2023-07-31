@@ -1,4 +1,6 @@
-import { Button, Typography } from '@mui/material';
+'use client';
+import { LightButton } from '@/components/atoms/Button';
+import { Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -8,9 +10,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Image from 'next/image';
 import Actions from '../actions';
-import { LightButton } from '@/components/atoms/Button';
+import { useRouter } from 'next/navigation';
 
 export default function CustomerTable() {
+  const { push } = useRouter();
   return (
     <TableContainer component={Paper}>
       <Table
@@ -44,6 +47,7 @@ export default function CustomerTable() {
         <TableBody>
           {body.map(({ name, actions, debt, ...row }: Object | any, idx) => (
             <TableRow
+              onClick={() => push('/dashboard/contacts/customers/123')}
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >

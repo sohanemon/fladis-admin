@@ -1,5 +1,4 @@
 import AddCustomerForm from '@/components/molecules/add-customer-form';
-import AddUserForm from '@/components/molecules/add-user-form';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 const AddCustomer = () => {

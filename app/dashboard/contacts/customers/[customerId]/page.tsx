@@ -1,11 +1,3 @@
-import React from "react";
-
-const Customer = () => {
-  return (
-    <div>
-      <p>Customer</p>
-    </div>
-  );
-};
-
-export default Customer;
+export default function Customer() {
+  return <section>Hello</section>;
+}

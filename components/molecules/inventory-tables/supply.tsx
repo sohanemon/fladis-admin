@@ -66,7 +66,7 @@ export default function SupplyTable({ edit }: { edit?: boolean }) {
                       sx={{
                         width: '300px',
                         fontSize: 12,
-                        p: '8px 14px',
+                        p: '10px 14px',
                         borderRadius: '5px',
                         color: '#C3C3C5',
                         border: '0.25px currentColor solid',

@@ -1,24 +1,22 @@
 'use client';
-import React from 'react';
-import { Stack } from '@mui/material';
-import Image from 'next/image';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import AddIcon from '@mui/icons-material/Add';
-import Link from 'next/link';
 import { FilledButton } from '@/components/atoms/Button';
 import { FilledInput } from '@/components/atoms/Input';
-import CustomerTable from '@/components/molecules/contacts-tables/customer';
+import SupplierTable from '@/components/molecules/contacts-tables/supplier';
+import AddIcon from '@mui/icons-material/Add';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { Stack } from '@mui/material';
+import Link from 'next/link';
 
 const Suppliers = () => {
   return (
     <>
       <Stack direction={'row'} justifyContent={'space-between'}>
         <div className='heading'>
-          <h1>Customers</h1>
+          <h1>Suppliers</h1>
           <p>
             Contacts
             <FiberManualRecordIcon sx={{ width: 6, fill: '#A5A5A5' }} />
-            <span>Customers</span>
+            <span>Suppliers</span>
           </p>
         </div>
         <Stack direction={'row'} gap={[1, 2]}>
@@ -31,7 +29,7 @@ const Suppliers = () => {
           </Link>
         </Stack>
       </Stack>
-      <CustomerTable />
+      <SupplierTable />
     </>
   );
 };

@@ -2,7 +2,7 @@ import { LightButton } from '@/components/atoms/Button';
 import { Ruler } from '@/components/atoms/Ruler';
 import { Box, Stack, Typography } from '@mui/material';
 
-export default function AddressCard() {
+export default function ContactCard() {
   return (
     <Box
       sx={{

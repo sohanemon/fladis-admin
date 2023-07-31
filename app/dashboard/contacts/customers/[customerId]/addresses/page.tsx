@@ -1,7 +1,7 @@
 'use client';
 import { FilledButton } from '@/components/atoms/Button';
 import { FilledInput } from '@/components/atoms/Input';
-import AddressCard from '@/components/molecules/Card/address-card';
+import ContactCard from '@/components/molecules/Card/contact-card';
 import AddIcon from '@mui/icons-material/Add';
 import { Box, Stack } from '@mui/material';
 import Image from 'next/image';
@@ -40,7 +40,7 @@ export default function Page() {
         my={[2]}
       >
         {Array.from(Array(2)).map((_) => (
-          <AddressCard key={_} />
+          <ContactCard key={_} />
         ))}
       </Box>
     </>

@@ -1,5 +1,4 @@
 'use client';
-import { LightButton } from '@/components/atoms/Button';
 import { Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
@@ -9,10 +8,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Image from 'next/image';
-import Actions from '../actions';
 import { useRouter } from 'next/navigation';
+import Actions from '../actions';
 
-export default function CustomerTable() {
+export default function SupplierTable() {
   const { push } = useRouter();
   return (
     <TableContainer component={Paper}>
@@ -35,7 +34,11 @@ export default function CustomerTable() {
               <TableCell
                 key={_}
                 align={
-                  _ === 'debt' ? 'center' : _ === 'actions' ? 'center' : 'left'
+                  _ === 'Contact person'
+                    ? 'center'
+                    : _ === 'actions'
+                    ? 'center'
+                    : 'left'
                 }
                 sx={{ textTransform: 'capitalize', fontSize: 12 }}
               >
@@ -45,11 +48,11 @@ export default function CustomerTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {body.map(({ name, actions, debt, ...row }: Object | any, idx) => (
+          {body.map(({ name, actions, ...row }: Object | any, idx) => (
             <TableRow
-              title='View Details'
-              onClick={() => push('/dashboard/contacts/customers/123')}
+              onClick={() => push('/dashboard/contacts/suppliers/123')}
               key={row.name}
+              title='View Details'
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell sx={{ fontSize: 12 }} component='th' scope='row'>
@@ -62,15 +65,15 @@ export default function CustomerTable() {
                 <Typography fontSize={12}>{name.title}</Typography>
               </TableCell>
               {Object.keys(row).map((_: string | any) => (
-                <TableCell sx={{ fontSize: 12 }} key={_}>
+                <TableCell
+                  align={_ === 'Contact person' ? 'center' : 'left'}
+                  sx={{ fontSize: 12 }}
+                  key={_}
+                >
                   {row[_]}
                 </TableCell>
               ))}
-              <TableCell align='center'>
-                <LightButton sx={{ color: '#18ACFE', bgcolor: '#F1FAFF' }}>
-                  {debt}$
-                </LightButton>
-              </TableCell>
+
               <TableCell align='center'>
                 <Actions isCustomerType user={name.title} />
               </TableCell>
@@ -84,23 +87,33 @@ export default function CustomerTable() {
 
 const body = [
   {
-    name: { img: '/assets/images/user.png', title: 'A Customer' },
-    phone: '(671) 555-0110',
+    name: { img: '/assets/images/configuration/gift.png', title: 'A Customer' },
     'Tax number': 25138,
-    Address: 'City, Postal code, Address1, Address2',
+    'Contact person': '-',
+    Address: (
+      <>
+        City, Postal code,
+        <br /> Address1, Address2
+      </>
+    ),
+    phone: '(671) 555-0110',
     email: 'wadew@acme.com',
-    store: '100 in 1',
-    debt: 120,
+    website: 'Example.com',
     actions: '',
   },
   {
-    name: { img: '/assets/images/user.png', title: 'Another' },
+    name: { img: '/assets/images/configuration/gift.png', title: 'A Customer' },
+    'Tax number': 25138,
+    'Contact person': '-',
+    Address: (
+      <>
+        City, Postal code,
+        <br /> Address1, Address2
+      </>
+    ),
     phone: '(671) 555-0110',
-    'Tax number': 25511,
-    Address: 'City, Postal code, Address1, Address2',
-    email: 'wadew@google.com',
-    store: '100 in 1',
-    debt: 320,
+    email: 'wadew@acme.com',
+    website: 'Example.com',
     actions: '',
   },
 ];

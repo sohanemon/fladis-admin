@@ -10,9 +10,51 @@ import TableRow from '@mui/material/TableRow';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Actions from '../actions';
+import { useEffect, useMemo } from 'react';
 
-export default function SuppliesTable() {
+interface Row {
+  supplier?: string;
+  'Purchase No.': string;
+  warehouse: {
+    img: string;
+    title: string;
+  };
+  'Supplier invoice ID': string;
+  'Delivery date': string;
+  actions: string;
+}
+
+export default function SuppliesTable({ inventory }: { inventory?: boolean }) {
   const { push } = useRouter();
+  const body = useMemo(() => {
+    if (inventory)
+      return [
+        {
+          supplier: 'Lollipop Land',
+          'Purchase No.': '575675',
+          warehouse: {
+            img: '/assets/images/configuration/gift.png',
+            title: 'The Candy King',
+          },
+          'Supplier invoice ID': '-',
+          'Delivery date': '11-05-2023',
+          actions: '',
+        },
+      ];
+    return [
+      {
+        'Purchase No.': '575675',
+        warehouse: {
+          img: '/assets/images/configuration/gift.png',
+          title: 'The Candy King',
+        },
+        'Supplier invoice ID': '-',
+        'Delivery date': '11-05-2023',
+        actions: '',
+      },
+    ];
+  }, [inventory]);
+
   return (
     <TableContainer component={Paper}>
       <Table
@@ -38,6 +80,8 @@ export default function SuppliesTable() {
                     ? 'left'
                     : _ === 'warehouse'
                     ? 'left'
+                    : _ === 'supplier'
+                    ? 'left'
                     : 'center'
                 }
                 sx={{ textTransform: 'capitalize', fontSize: 12 }}
@@ -58,6 +102,10 @@ export default function SuppliesTable() {
               <TableCell sx={{ fontSize: 12 }} component='th' scope='row'>
                 {(idx + 1).toLocaleString('en-us', { minimumIntegerDigits: 2 })}
               </TableCell>
+              {inventory && (
+                <TableCell sx={{ fontSize: 12 }}>{row.supplier}</TableCell>
+              )}
+
               <TableCell sx={{ fontSize: 12 }}>{row['Purchase No.']}</TableCell>
               <TableCell
                 sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}
@@ -82,8 +130,9 @@ export default function SuppliesTable() {
   );
 }
 
-const body = [
+let body: Row[] = [
   {
+    supplier: 'Lollipop Land',
     'Purchase No.': '575675',
     warehouse: {
       img: '/assets/images/configuration/gift.png',

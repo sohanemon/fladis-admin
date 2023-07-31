@@ -15,7 +15,7 @@ export default function FavoriteCard() {
       <Stack>
         <Stack direction={'row'} gap={[2]} alignItems={'center'}>
           <Image
-            src={`/assets/images/user.png`}
+            src={`/assets/images/configuration/gift.png`}
             alt=''
             width={45}
             height={45}

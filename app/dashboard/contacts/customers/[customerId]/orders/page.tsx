@@ -1,5 +1,5 @@
-import NotesTable from '@/components/molecules/contacts-tables/notes-table';
+import OrdersTable from '@/components/molecules/contacts-tables/orders-table';
 
 export default function Page() {
-  return <NotesTable />;
+  return <OrdersTable />;
 }

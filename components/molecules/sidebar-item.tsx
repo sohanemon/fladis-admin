@@ -196,7 +196,10 @@ function ListItem({
   const { push } = useRouter();
   const path = usePathname();
   return (
-    <ListItemButton onClick={() => slug && push(slug)}>
+    <ListItemButton
+      sx={{ '& .MuiListItemIcon-root': { minWidth: '40px' } }}
+      onClick={() => slug && push(slug)}
+    >
       <ListItemIcon>
         <Icon
           sx={{
@@ -224,7 +227,10 @@ const NestedListItem = ({ label, inner, slug, Icon, nested }: ListType) => {
 
   return (
     <>
-      <ListItemButton onClick={handleClick}>
+      <ListItemButton
+        sx={{ '& .MuiListItemIcon-root': { minWidth: '40px' } }}
+        onClick={handleClick}
+      >
         <ListItemIcon>
           <Icon
             sx={{

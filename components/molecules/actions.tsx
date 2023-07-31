@@ -14,11 +14,13 @@ export default function Actions({
   user,
   isGiftType,
   isCustomerType,
+  isSupplies,
   isClaimType,
 }: {
   user?: string;
   isClaimType?: boolean;
   isCustomerType?: boolean;
+  isSupplies?: boolean;
   isGiftType?: boolean;
 }) {
   const { push } = useRouter();
@@ -59,7 +61,6 @@ export default function Actions({
             });
           },
         },
-
         {
           icon: <DeleteIcon sx={{ fill: '#CCCCCC' }} />,
           label: 'Remove',

@@ -7,7 +7,7 @@ import { Box, Stack } from '@mui/material';
 const Permissions = () => {
   return (
     <Box>
-      <Stack direction={'row'} justifyContent={'space-between'}>
+      <Stack direction={['column', 'row']} justifyContent={'space-between'}>
         <div className='heading'>
           <h1>Permissions</h1>
           <p>
@@ -16,7 +16,7 @@ const Permissions = () => {
             <span>Permissions</span>
           </p>
         </div>
-        <Stack direction={'row'} gap={[1, 2]}>
+        <Stack direction={['column', 'row']} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
         </Stack>
       </Stack>

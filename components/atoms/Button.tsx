@@ -53,6 +53,8 @@ export const FilledButton = ({
           paddingInline: 2,
           gap: 1,
           fontSize: 12,
+          mb: '3px',
+          width: ['100%', 'max-content'],
           ':hover': {
             opacity: 0.9,
             bgcolor: primary ? '#5E0084' : 'white',

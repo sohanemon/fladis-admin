@@ -17,7 +17,7 @@ const DocumentType = () => {
   }
   return (
     <Box>
-      <Stack direction={'row'} justifyContent={'space-between'}>
+      <Stack direction={['column', 'row']} justifyContent={'space-between'}>
         <div className='heading'>
           <h1>Document type</h1>
           <p>
@@ -26,7 +26,7 @@ const DocumentType = () => {
             <span>Document type</span>
           </p>
         </div>
-        <Stack direction={'row'} gap={[1, 2]}>
+        <Stack direction={['column', 'row']} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
           <FilledButton
             onClick={handleAdd}

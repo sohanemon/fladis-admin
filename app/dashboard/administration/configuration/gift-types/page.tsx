@@ -7,7 +7,6 @@ import { useModalStore } from '@/zustand-store/Modal.store';
 import AddIcon from '@mui/icons-material/Add';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { Box, Stack } from '@mui/material';
-import Image from 'next/image';
 
 const GiftTypes = () => {
   const { setModalContent, setModalShow } = useModalStore();
@@ -18,7 +17,7 @@ const GiftTypes = () => {
   }
   return (
     <Box>
-      <Stack direction={'row'} justifyContent={'space-between'}>
+      <Stack direction={['column', 'row']} justifyContent={'space-between'}>
         <div className='heading'>
           <h1>Gift types</h1>
           <p>
@@ -27,7 +26,7 @@ const GiftTypes = () => {
             <span>Gift types</span>
           </p>
         </div>
-        <Stack direction={'row'} gap={[1, 2]}>
+        <Stack direction={['column', 'row']} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
           <FilledButton
             onClick={handleAdd}

@@ -4,11 +4,10 @@ import { FilledInput, InputWithIcon } from '@/components/atoms/Input';
 import ClaimTypesTable from '@/components/molecules/authorization-tables/claim-type';
 import { useModalStore } from '@/zustand-store/Modal.store';
 import AddIcon from '@mui/icons-material/Add';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import CloseIcon from '@mui/icons-material/Close';
-import { Box, Stack } from '@mui/material';
-import CreateIcon from '@mui/icons-material/Create';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import SimCardDownloadIcon from '@mui/icons-material/SimCardDownload';
+import { Box, Stack } from '@mui/material';
 
 const Roles = () => {
   const { setModalContent, setModalShow } = useModalStore();
@@ -57,7 +56,7 @@ const Roles = () => {
 
   return (
     <Box>
-      <Stack direction={'row'} justifyContent={'space-between'}>
+      <Stack direction={['column', 'row']} justifyContent={'space-between'}>
         <div className='heading'>
           <h1>Roles</h1>
           <p>
@@ -66,7 +65,7 @@ const Roles = () => {
             <span>Claim types</span>
           </p>
         </div>
-        <Stack direction={'row'} gap={[1, 2]}>
+        <Stack direction={['column', 'row']} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
           <FilledButton
             onClick={handleAdd}

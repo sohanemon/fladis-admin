@@ -12,7 +12,7 @@ export default function Page() {
     <>
       <Stack direction={'row'} justifyContent={'space-between'}>
         <div />
-        <Stack direction={'row'} gap={[1, 2]}>
+        <Stack direction={['column', 'row']} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
           <FilledButton
             icon={

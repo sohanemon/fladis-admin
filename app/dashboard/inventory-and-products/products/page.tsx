@@ -11,7 +11,7 @@ import Link from 'next/link';
 const Products = () => {
   return (
     <>
-      <Stack direction={'row'} justifyContent={'space-between'}>
+      <Stack direction={['column', 'row']} justifyContent={'space-between'}>
         <div className='heading'>
           <h1>Supplies</h1>
           <p>
@@ -20,7 +20,7 @@ const Products = () => {
             <span>Supplies</span>
           </p>
         </div>
-        <Stack direction={'row'} gap={[1, 2]}>
+        <Stack direction={['column', 'row']} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
           <FilledButton
             icon={

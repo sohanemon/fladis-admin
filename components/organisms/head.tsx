@@ -1,10 +1,10 @@
-import { Stack } from '@mui/material';
-import { FilledButton } from '../atoms/Button';
-import Image from 'next/image';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import AddIcon from '@mui/icons-material/Add';
-import { FilledInput } from '../atoms/Input';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { Stack } from '@mui/material';
+import Image from 'next/image';
 import Link from 'next/link';
+import { FilledButton } from '../atoms/Button';
+import { FilledInput } from '../atoms/Input';
 
 export default function Heading() {
   return (
@@ -17,7 +17,7 @@ export default function Heading() {
           <span>Users</span>
         </p>
       </div>
-      <Stack direction={'row'} gap={[1, 2]}>
+      <Stack direction={['column', 'row']} gap={[1, 2]}>
         <FilledInput placeholder='Search' />
         <FilledButton
           icon={

@@ -10,7 +10,7 @@ import Link from 'next/link';
 const Suppliers = () => {
   return (
     <>
-      <Stack direction={'row'} justifyContent={'space-between'}>
+      <Stack direction={['column', 'row']} justifyContent={'space-between'}>
         <div className='heading'>
           <h1>Suppliers</h1>
           <p>
@@ -19,7 +19,7 @@ const Suppliers = () => {
             <span>Suppliers</span>
           </p>
         </div>
-        <Stack direction={'row'} gap={[1, 2]}>
+        <Stack direction={['column', 'row']} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
 
           <Link href={'/dashboard/contacts/suppliers/add-supplier'}>

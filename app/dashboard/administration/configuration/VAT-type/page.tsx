@@ -2,8 +2,6 @@
 import { FilledButton } from '@/components/atoms/Button';
 import { FilledInput } from '@/components/atoms/Input';
 import { GiftModal } from '@/components/modals/gift-modal';
-import DocumentTable from '@/components/molecules/configuration-tables/document-table';
-import UnitTable from '@/components/molecules/configuration-tables/unit-table';
 import VatTable from '@/components/molecules/configuration-tables/vat-table';
 import { useModalStore } from '@/zustand-store/Modal.store';
 import AddIcon from '@mui/icons-material/Add';
@@ -19,7 +17,7 @@ const VATType = () => {
   }
   return (
     <Box>
-      <Stack direction={'row'} justifyContent={'space-between'}>
+      <Stack direction={['column', 'row']} justifyContent={'space-between'}>
         <div className='heading'>
           <h1>VAT type</h1>
           <p>
@@ -28,7 +26,7 @@ const VATType = () => {
             <span>VAT type</span>
           </p>
         </div>
-        <Stack direction={'row'} gap={[1, 2]}>
+        <Stack direction={['column', 'row']} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
           <FilledButton
             onClick={handleAdd}

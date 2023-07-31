@@ -16,7 +16,7 @@ const Warehouses = () => {
   }
   return (
     <Box>
-      <Stack direction={'row'} justifyContent={'space-between'}>
+      <Stack direction={['column', 'row']} justifyContent={'space-between'}>
         <div className='heading'>
           <h1>Warehouses</h1>
           <p>
@@ -25,7 +25,7 @@ const Warehouses = () => {
             <span>Warehouses</span>
           </p>
         </div>
-        <Stack direction={'row'} gap={[1, 2]}>
+        <Stack direction={['column', 'row']} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
           <FilledButton
             icon={

@@ -1,18 +1,16 @@
 'use client';
-import { Box } from '@mui/material';
-import React from 'react';
-import { Stack } from '@mui/material';
-import Image from 'next/image';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import AddIcon from '@mui/icons-material/Add';
-import Link from 'next/link';
-import { FilledInput } from '@/components/atoms/Input';
 import { FilledButton } from '@/components/atoms/Button';
+import { FilledInput } from '@/components/atoms/Input';
 import StoreCard from '@/components/molecules/Card/store-card';
+import AddIcon from '@mui/icons-material/Add';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { Box, Stack } from '@mui/material';
+import Image from 'next/image';
+import Link from 'next/link';
 const Stores = () => {
   return (
     <Box>
-      <Stack direction={'row'} justifyContent={'space-between'}>
+      <Stack direction={['column', 'row']} justifyContent={'space-between'}>
         <div className='heading'>
           <h1>Stores</h1>
           <p>
@@ -21,7 +19,7 @@ const Stores = () => {
             <span>Stores</span>
           </p>
         </div>
-        <Stack direction={'row'} gap={[1, 2]}>
+        <Stack direction={['column', 'row']} gap={[1, 2]}>
           <FilledInput placeholder='Search' />
           <FilledButton
             icon={

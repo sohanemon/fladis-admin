@@ -41,6 +41,7 @@ const Supply = () => {
             <SupplyTable />
           </Paper>
         </Stack>
+        <PurchaseStatus />
       </Box>
     </div>
   );

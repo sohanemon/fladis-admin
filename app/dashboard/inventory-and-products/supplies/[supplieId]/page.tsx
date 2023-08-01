@@ -1,5 +1,6 @@
 'use client';
 import { FilledButton } from '@/components/atoms/Button';
+import PurchaseStatus from '@/components/molecules/Card/purchase-status';
 import SupplyTable from '@/components/molecules/inventory-tables/supply';
 import SupplyDetails from '@/components/molecules/supply-details';
 import AddIcon from '@mui/icons-material/Add';

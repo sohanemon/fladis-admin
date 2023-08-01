@@ -16,16 +16,25 @@ export default function Actions({
   detail_remove,
   isSupplies,
   deleteOnly,
+  detailOnly,
 }: {
   user?: string;
   deleteOnly?: boolean;
   detail_remove?: boolean;
   isSupplies?: boolean;
+  detailOnly?: boolean;
   edit_remove?: boolean;
 }) {
   const { push } = useRouter();
 
   const data = useMemo(() => {
+    if (detailOnly)
+      return [
+        {
+          icon: <VisibilityIcon sx={{ fill: '#CCCCCC' }} />,
+          label: 'Details',
+        },
+      ];
     if (detail_remove)
       return [
         {

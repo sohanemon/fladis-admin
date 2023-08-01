@@ -1,5 +1,6 @@
 'use client';
 import { FilledButton } from '@/components/atoms/Button';
+import UploadFile from '@/components/atoms/upload-file';
 import PurchaseStatus from '@/components/molecules/Card/purchase-status';
 import SupplyTable from '@/components/molecules/inventory-tables/supply';
 import SupplyDetails from '@/components/molecules/supply-details';
@@ -28,6 +29,7 @@ const Supply = () => {
       >
         <Stack>
           <SupplyDetails />
+
           <br />
           <Link
             href={'/dashboard/inventory-and-products/supplies/add-supply'}
@@ -42,7 +44,10 @@ const Supply = () => {
             <SupplyTable />
           </Paper>
         </Stack>
-        <PurchaseStatus />
+        <Stack>
+          <PurchaseStatus />
+          <UploadFile />
+        </Stack>
       </Box>
     </div>
   );
